@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://pb37fuoqqwok"]
+
+[ext_resource type="Texture2D" uid="uid://f1eseqv43daj" path="res://místnost.png" id="1_xu1i7"]
+
+[node name="Místnost" type="Sprite2D"]
+position = Vector2(479.75, 325.25)
+scale = Vector2(9.505, 6.4750004)
+texture = ExtResource("1_xu1i7")
