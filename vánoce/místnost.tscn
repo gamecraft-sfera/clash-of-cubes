@@ -1,26 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://pb37fuoqqwok"]
+[gd_scene load_steps=2 format=3 uid="uid://pb37fuoqqwok"]
 
-[ext_resource type="Texture2D" uid="uid://f1eseqv43daj" path="res://místnost.png" id="1_xu1i7"]
-[ext_resource type="Texture2D" uid="uid://bxc8iesb6mp85" path="res://GAUČ.png" id="2_64bry"]
-[ext_resource type="Texture2D" uid="uid://b6v16konu563o" path="res://VÁNOČMÍ STROMEK.png" id="3_ncpq1"]
-[ext_resource type="Texture2D" uid="uid://d0x3y55vo2alw" path="res://pixil-frame-0 (1).png" id="4_hptm1"]
+[ext_resource type="PackedScene" uid="uid://pb37fuoqqwok" path="res://místnost.tscn" id="1_xu1i7"]
 
-[node name="Místnost" type="Sprite2D"]
-position = Vector2(463, 324)
-scale = Vector2(9.505, 6.4750004)
-texture = ExtResource("1_xu1i7")
-
-[node name="Gauč" type="Sprite2D" parent="."]
-position = Vector2(30.615467, -18.996136)
-scale = Vector2(0.6399264, 0.7069498)
-texture = ExtResource("2_64bry")
-
-[node name="VánočmíStromek" type="Sprite2D" parent="."]
-position = Vector2(0.63124657, -23.938223)
-scale = Vector2(0.7619673, 0.9370657)
-texture = ExtResource("3_ncpq1")
-
-[node name="PixilFrame0(1)" type="Sprite2D" parent="."]
-position = Vector2(-36.82272, 1.3899618)
-scale = Vector2(0.4145655, 0.536222)
-texture = ExtResource("4_hptm1")
+[node name="Místnost" instance=ExtResource("1_xu1i7")]
+position = Vector2(576, 374)
+scale = Vector2(11.512499, 10.02)
