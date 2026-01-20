@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcf5k6gvktsms"]
+
+[ext_resource type="Texture2D" uid="uid://b6v16konu563o" path="res://VÁNOČMÍ STROMEK.png" id="1_348n5"]
+[ext_resource type="Texture2D" uid="uid://dp4byat56ofjd" path="res://RUCE.png" id="2_7wud7"]
+[ext_resource type="Texture2D" uid="uid://4k7y7l3du6a8" path="res://NOHY.png" id="3_wk1on"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h4qhm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_348n5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_348n5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_348n5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_348n5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_348n5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7wud7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7wud7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7wud7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wk1on")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+position = Vector2(277, 103)
+scale = Vector2(4.18, 4.73)
+sprite_frames = SubResource("SpriteFrames_h4qhm")

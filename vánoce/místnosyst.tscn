@@ -1,0 +1,110 @@
+[gd_scene load_steps=13 format=3 uid="uid://d07hxjhovk8o5"]
+
+[ext_resource type="Texture2D" uid="uid://f1eseqv43daj" path="res://místnost.png" id="1_qfvhs"]
+[ext_resource type="Script" uid="uid://bx54dwnprx7fa" path="res://místnosyst.gd" id="2_dmek0"]
+[ext_resource type="Texture2D" uid="uid://c32nw5rc6vwmm" path="res://Darek1.png" id="2_sby0l"]
+[ext_resource type="Texture2D" uid="uid://bfb2gwlyi2mmj" path="res://nozickyadarek3.png" id="3_sby0l"]
+[ext_resource type="Texture2D" uid="uid://bxc8iesb6mp85" path="res://GAUČ.png" id="5_v8td3"]
+[ext_resource type="Texture2D" uid="uid://b6v16konu563o" path="res://VÁNOČMÍ STROMEK.png" id="6_hcpqp"]
+[ext_resource type="Texture2D" uid="uid://wfqlwbhg4afy" path="res://TypekHAPPY.png" id="7_v8td3"]
+[ext_resource type="Texture2D" uid="uid://007k770oa0jo" path="res://TypekUNHAPPY.png" id="8_hcpqp"]
+[ext_resource type="PackedScene" uid="uid://cl2t7gyr2t2a1" path="res://kruhnadvere.tscn" id="9_hcpqp"]
+
+[sub_resource type="Animation" id="Animation_v8td3"]
+resource_name = "DarekRun"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.36, 0.73333335, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2.8546705, 9.490268), Vector2(26.903114, 9.687982), Vector2(44.723183, 9.193697), Vector2(61.764706, 11.862835)]
+}
+
+[sub_resource type="Animation" id="Animation_hcpqp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.8546705, 9.490268)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_inmh6"]
+_data = {
+&"DarekRun": SubResource("Animation_v8td3"),
+&"RESET": SubResource("Animation_hcpqp")
+}
+
+[node name="Místnost" type="Sprite2D"]
+position = Vector2(582, 373)
+scale = Vector2(11.56, 10.115627)
+texture = ExtResource("1_qfvhs")
+script = ExtResource("2_dmek0")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = -17.560555
+offset_top = -20.26567
+offset_right = 90.64578
+offset_bottom = 79.73433
+scale = Vector2(0.4668768, 0.57714003)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+action_mode = 0
+texture_normal = ExtResource("2_sby0l")
+
+[node name="kruhnadvere" parent="." instance=ExtResource("9_hcpqp")]
+offset_left = -20.674742
+offset_top = -12.950258
+offset_right = -20.674742
+offset_bottom = -12.950258
+scale = Vector2(0.1, 0.1)
+
+[node name="Nozickyadarek3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(2.8546705, 9.490268)
+scale = Vector2(0.5125432, 0.5387704)
+texture = ExtResource("3_sby0l")
+
+[node name="AnimationPlay" type="AnimationPlayer" parent="Nozickyadarek3"]
+libraries = {
+&"": SubResource("AnimationLibrary_inmh6")
+}
+
+[node name="Gauč" type="Sprite2D" parent="."]
+position = Vector2(-23.269896, -17.398825)
+scale = Vector2(0.752595, 0.81892174)
+texture = ExtResource("5_v8td3")
+
+[node name="VánočmíStromek" type="Sprite2D" parent="."]
+position = Vector2(23.442905, -28.767372)
+texture = ExtResource("6_hcpqp")
+
+[node name="HappyButton" type="TextureButton" parent="."]
+offset_left = -66.608986
+offset_top = -22.934814
+offset_right = 33.391014
+offset_bottom = 77.065186
+scale = Vector2(0.47282347, 0.49140128)
+texture_normal = ExtResource("7_v8td3")
+
+[node name="UnHappy" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-40.65744, 2.570282)
+scale = Vector2(0.40980288, 0.5743588)
+texture = ExtResource("8_hcpqp")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="animation_started" from="Nozickyadarek3/AnimationPlay" to="." method="_on_animation_player_animation_started"]
+[connection signal="pressed" from="HappyButton" to="." method="_on_happy_button_pressed"]
