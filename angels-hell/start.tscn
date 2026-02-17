@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cxen2x3qhr0vy"]
+[gd_scene load_steps=23 format=3 uid="uid://cxen2x3qhr0vy"]
 
 [ext_resource type="Texture2D" uid="uid://ddscp3b6mfe7o" path="res://AllSkyFree_Sky_EpicBlueSunset_Equirect.png" id="1_gophc"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ots34"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://c3lev2w4v8oeg" path="res://Low Building.glb" id="6_g38d0"]
 [ext_resource type="PackedScene" uid="uid://beol8pikkhgc1" path="res://angel_statue.tscn" id="7_g38d0"]
 [ext_resource type="PackedScene" uid="uid://bgef6o6pj5lww" path="res://Stone Wall Towers.glb" id="8_pob1m"]
+[ext_resource type="PackedScene" uid="uid://bvxq4we7xegx3" path="res://Bus stop sign.glb" id="10_da165"]
+[ext_resource type="PackedScene" uid="uid://uw0b2hapsp7c" path="res://Bridge (1).glb" id="11_r8ukj"]
+[ext_resource type="PackedScene" uid="uid://cwf54rrd2t75f" path="res://zastávka.glb" id="12_r8ukj"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_p0nl4"]
 panorama = ExtResource("1_gophc")
@@ -41,6 +44,9 @@ radius = 0.8432617
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pob1m"]
 size = Vector3(1.9194336, 0.37075806, 0.23852539)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_da165"]
+size = Vector3(1196.9238, 57.290894, 186.00607)
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 0.9977362, 0.06724906, 0, -0.06724906, 0.9977362, 0, 0, 0)
@@ -265,7 +271,7 @@ use_collision = true
 size = Vector3(3.6791992, 1.7387695, 7.747612)
 
 [node name="posina4" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.99906164, -0.011441791, -0.041769844, -0.015773978, 0.9943554, 0.10490581, 0.040333755, 0.10546638, -0.9936015, 57.739143, 9.291589, 0.30884212)
+transform = Transform3D(-0.99906164, -0.011441791, -0.041769844, -0.015773978, 0.9943554, 0.10490581, 0.040333755, 0.10546638, -0.9936015, 56.603485, 9.065938, 0.2936327)
 use_collision = true
 size = Vector3(3.6791992, 1.7387695, 7.747612)
 
@@ -290,7 +296,27 @@ use_collision = true
 size = Vector3(3.6791992, 1.7387695, 7.747612)
 
 [node name="posina 9" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.88693863, -0.029024053, 0.46097302, 0.01805273, 0.99508125, 0.097387105, -0.46153438, 0.09469834, -0.8820507, 34.51815, 1.1861308, -7.356463)
+transform = Transform3D(-0.011559427, -0.03800074, 0.99920774, 0.054242756, 0.9977808, 0.03857391, -0.99845976, 0.054645516, -0.009472582, 81.68411, 9.200583, -0.5039975)
+use_collision = true
+size = Vector3(10.479614, 1.7387695, 7.969196)
+
+[node name="posina 10" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.9988302, -0.011239452, -0.047031667, -0.014391204, 0.997633, 0.06721876, 0.046165027, 0.06781704, -0.99662596, 48.22581, 9.53559, -14.028865)
+use_collision = true
+size = Vector3(10.479614, 1.7387695, 5.1834984)
+
+[node name="posina 11" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.9991023, -0.011479949, -0.04077646, -0.014403181, 0.99728936, 0.07213262, 0.039837983, 0.072655246, -0.99655753, 49.836365, 5.4595275, 15.697897)
+use_collision = true
+size = Vector3(10.479614, 1.7387695, 5.1834984)
+
+[node name="posina 12" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.88693863, -0.029024053, 0.46097302, 0.018052729, 0.99508125, 0.097387105, -0.46153438, 0.09469834, -0.8820507, 34.51815, 1.1861308, -7.356463)
+use_collision = true
+size = Vector3(10.479614, 1.7387695, 5.1834984)
+
+[node name="posina 13" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.88693863, -0.029024053, 0.46097302, 0.018052729, 0.99508125, 0.097387105, -0.46153438, 0.09469834, -0.8820507, 34.51815, 1.1861308, -7.356463)
 use_collision = true
 size = Vector3(10.479614, 1.7387695, 5.1834984)
 
@@ -314,3 +340,59 @@ use_collision = true
 collision_layer = 2
 collision_mask = 0
 radius = 1.4274968
+
+[node name="Root Scene8" parent="." instance=ExtResource("10_da165")]
+transform = Transform3D(0.086158566, 0, 0, 0, 0.11120867, -0.011177875, 0, 0.0074956445, 0.1658397, 71.16793, 17.364815, -12.842709)
+
+[node name="Bridge (1)" parent="." instance=ExtResource("11_r8ukj")]
+transform = Transform3D(0.01790014, 0, 0, 0, 0.010793764, 0.0012928576, 0, 0.00072751765, -0.0191814, 68.37299, 6.9365134, -0.03228286)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Bridge (1)"]
+transform = Transform3D(0.9999999, -4.440892e-16, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridge (1)/StaticBody3D"]
+transform = Transform3D(1.0000001, 1.7763568e-15, 5.5879354e-09, 3.375078e-14, 1.0000001, -3.4080481e-12, -9.322539e-07, -8.6736174e-16, 1.0000002, -0.7706909, 247.24908, 3.7763672)
+shape = SubResource("BoxShape3D_da165")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridge (1)"]
+transform = Transform3D(1.0000001, 1.7763568e-15, 5.5879354e-09, 3.375078e-14, 1.0000001, -3.4080481e-12, -9.322539e-07, -8.6736174e-16, 1.0000002, -0.7706909, 247.24908, 3.7763672)
+shape = SubResource("BoxShape3D_da165")
+
+[node name="Bridge (1)2" parent="." instance=ExtResource("11_r8ukj")]
+transform = Transform3D(-0.000102472586, -1.7462298e-10, 0.019224608, -0.0012037476, 0.010793764, -7.401546e-06, 0.017859321, 0.0007275175, 0.00010980737, 83.29921, 6.3506675, 12.039395)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Bridge (1)2"]
+transform = Transform3D(0.9999999, -4.440892e-16, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridge (1)2/StaticBody3D"]
+transform = Transform3D(1.0000001, 1.7763568e-15, 5.5879354e-09, 3.375078e-14, 1.0000001, -3.4080481e-12, -9.322539e-07, -8.6736174e-16, 1.0000002, -0.7706909, 247.24908, 3.7763672)
+shape = SubResource("BoxShape3D_da165")
+
+[node name="Bridge (1)3" parent="." instance=ExtResource("11_r8ukj")]
+transform = Transform3D(-0.00029865518, -1.1641532e-10, 0.019222246, -0.0012036, 0.010793764, -2.1571173e-05, 0.01785713, 0.00072751753, 0.00032003236, 82.95757, 8.098748, -13.89587)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Bridge (1)3"]
+transform = Transform3D(0.99999994, -4.440892e-16, 0, 0, 1, -1.0026702e-15, 0, -1.3877788e-17, 0.99999994, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridge (1)3/StaticBody3D"]
+transform = Transform3D(1.0000001, 1.7763568e-15, 5.5879354e-09, 3.375078e-14, 1.0000001, -3.4080481e-12, -9.322539e-07, -8.6736174e-16, 1.0000002, -0.7706909, 247.24908, 3.7763672)
+shape = SubResource("BoxShape3D_da165")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.053861275, -0.067725465, 0.9962381, 0.048725493, 0.99632573, 0.07036495, -0.9973588, 0.052332576, -0.050364252, 81.60494, 9.026326, -0.38178062)
+use_collision = true
+size = Vector3(5.9853516, 1.7387695, 8.483303)
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGBox3D7"]
+transform = Transform3D(-0.0128821535, -0.9998931, -0.0066083446, 0.9996873, -0.0127366325, -0.021602768, 0.021515641, -0.006884724, 0.99975586, 0.064847946, 2.120452, 3.5081434)
+radius = 0.123046875
+height = 2.9575195
+
+[node name="sloup divny4" parent="CSGBox3D7" instance=ExtResource("6_g38d0")]
+transform = Transform3D(0.9977056, -0.0012210915, 0.06769286, 0.0058021783, 0.9977047, -0.067521095, -0.06745401, 0.067758866, 0.99542534, 1.4980412, 0.709132, 3.4418879)
+
+[node name="sloup divny" parent="CSGBox3D7" instance=ExtResource("6_g38d0")]
+transform = Transform3D(0.9998038, -0.0012210936, 0.019781448, 0.002558343, 0.99770457, -0.06772164, -0.019652776, 0.06775885, 0.9975148, -1.4040699, 0.70875305, 3.3951712)
+
+[node name="zastávka" parent="." instance=ExtResource("12_r8ukj")]
+transform = Transform3D(1, 0, 0, 0, 0.9977362, -0.06724906, 0, 0.06724906, 0.9977362, 83.71275, 9.249381, 27.482235)
