@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://5lw1vri6a43n"
-path="res://.godot/imported/Coliseum (1).glb-5b5f2ff473d2ab7bce8476cfb4938ded.scn"
+path="res://.godot/imported/Coliseum (1).glb-1810e3d7793a9aff4cf4a38f16b3f3d1.scn"
 
 [deps]
 
-source_file="res://Coliseum (1).glb"
-dest_files=["res://.godot/imported/Coliseum (1).glb-5b5f2ff473d2ab7bce8476cfb4938ded.scn"]
+source_file="res://addons/fpc/Coliseum (1).glb"
+dest_files=["res://.godot/imported/Coliseum (1).glb-1810e3d7793a9aff4cf4a38f16b3f3d1.scn"]
 
 [params]
 
