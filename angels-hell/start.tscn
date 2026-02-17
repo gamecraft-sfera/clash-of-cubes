@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cxen2x3qhr0vy"]
+[gd_scene load_steps=26 format=3 uid="uid://cxen2x3qhr0vy"]
 
 [ext_resource type="Texture2D" uid="uid://ddscp3b6mfe7o" path="res://AllSkyFree_Sky_EpicBlueSunset_Equirect.png" id="1_gophc"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ots34"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bgef6o6pj5lww" path="res://Stone Wall Towers.glb" id="8_pob1m"]
 [ext_resource type="PackedScene" uid="uid://bvxq4we7xegx3" path="res://Bus stop sign.glb" id="10_da165"]
 [ext_resource type="PackedScene" uid="uid://uw0b2hapsp7c" path="res://Bridge (1).glb" id="11_r8ukj"]
-[ext_resource type="PackedScene" uid="uid://cwf54rrd2t75f" path="res://zastávka.glb" id="12_r8ukj"]
+[ext_resource type="PackedScene" uid="uid://cavvxxhln54gn" path="res://zastávka.tscn" id="12_r8ukj"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_p0nl4"]
 panorama = ExtResource("1_gophc")
@@ -47,6 +47,15 @@ size = Vector3(1.9194336, 0.37075806, 0.23852539)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_da165"]
 size = Vector3(1196.9238, 57.290894, 186.00607)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r8ukj"]
+size = Vector3(4.1267395, 0.36376953, 0.9517822)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1colc"]
+size = Vector3(1.8597679, 0.82910156, 0.095214844)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hwiky"]
+size = Vector3(0.11526489, 1, 0.4234314)
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 0.9977362, 0.06724906, 0, -0.06724906, 0.9977362, 0, 0, 0)
@@ -342,7 +351,7 @@ collision_mask = 0
 radius = 1.4274968
 
 [node name="Root Scene8" parent="." instance=ExtResource("10_da165")]
-transform = Transform3D(0.086158566, 0, 0, 0, 0.11120867, -0.011177875, 0, 0.0074956445, 0.1658397, 71.16793, 17.364815, -12.842709)
+transform = Transform3D(0.2531335, 0, 0, 0, 0.24607724, -0.014822022, 0, 0.016585998, 0.21990567, 85.50601, 10.93862, -23.4993)
 
 [node name="Bridge (1)" parent="." instance=ExtResource("11_r8ukj")]
 transform = Transform3D(0.01790014, 0, 0, 0, 0.010793764, 0.0012928576, 0, 0.00072751765, -0.0191814, 68.37299, 6.9365134, -0.03228286)
@@ -395,4 +404,134 @@ transform = Transform3D(0.9977056, -0.0012210915, 0.06769286, 0.0058021783, 0.99
 transform = Transform3D(0.9998038, -0.0012210936, 0.019781448, 0.002558343, 0.99770457, -0.06772164, -0.019652776, 0.06775885, 0.9975148, -1.4040699, 0.70875305, 3.3951712)
 
 [node name="zastávka" parent="." instance=ExtResource("12_r8ukj")]
-transform = Transform3D(1, 0, 0, 0, 0.9977362, -0.06724906, 0, 0.06724906, 0.9977362, 83.71275, 9.249381, 27.482235)
+transform = Transform3D(6.954499, 0, 0, 0, 6.8412476, -0.31623513, 0, 0.46111134, 4.6918015, 85.76946, 11.51977, 31.430347)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="zastávka"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="zastávka/StaticBody3D"]
+transform = Transform3D(0.99997085, 1.110223e-16, -3.8929284e-07, 0, 1, 0, 1.8067658e-07, -3.907985e-14, 0.99999934, -0.07575703, -0.74845326, -1.4324517)
+shape = SubResource("BoxShape3D_r8ukj")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="zastávka/StaticBody3D"]
+transform = Transform3D(0.99997073, 1.110223e-16, -3.9115548e-07, 0, 1, 0, 1.8253922e-07, -3.907985e-14, 0.99999934, -0.099770546, -0.74845326, 1.4212294)
+shape = SubResource("BoxShape3D_r8ukj")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="zastávka/StaticBody3D"]
+transform = Transform3D(0.99998033, 1.110223e-16, -2.6077032e-07, 0, 1, 0, 1.2107193e-07, -3.907985e-14, 0.99999934, -0.027849197, -0.0854491, 1.7439203)
+shape = SubResource("BoxShape3D_1colc")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="zastávka/StaticBody3D"]
+transform = Transform3D(0.99997497, 1.110223e-16, -3.3341348e-07, 0, 1, 0, 1.6018748e-07, -3.907985e-14, 0.99999934, -1.4485064, -0.0854491, -1.740047)
+shape = SubResource("BoxShape3D_1colc")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="zastávka/StaticBody3D"]
+transform = Transform3D(0.9999703, 1.110223e-16, -3.9674342e-07, 0, 1, 0, 1.8253922e-07, -3.907985e-14, 0.99999934, 1.126544, -0.0854491, -1.6874251)
+shape = SubResource("BoxShape3D_1colc")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="zastávka/StaticBody3D"]
+transform = Transform3D(0.99998486, 1.110223e-16, -1.9930303e-07, 0, 1, 0, 9.685755e-08, -3.907985e-14, 0.99999934, 0.2330246, 0, 1.6700048)
+shape = SubResource("BoxShape3D_hwiky")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="zastávka/StaticBody3D"]
+transform = Transform3D(0.99998444, 1.110223e-16, -2.0489097e-07, 0, 1, 0, 1.0058284e-07, -3.907985e-14, 0.99999934, 1.7958498, 0, 1.6881094)
+shape = SubResource("BoxShape3D_hwiky")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="zastávka/StaticBody3D"]
+transform = Transform3D(0.9999847, 1.110223e-16, -2.0116568e-07, 0, 1, 0, 9.685755e-08, -3.907985e-14, 0.99999934, 0.90396214, 0, 1.682353)
+shape = SubResource("BoxShape3D_hwiky")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="zastávka/StaticBody3D"]
+transform = Transform3D(0.9999848, 1.110223e-16, -2.0023435e-07, 0, 1, 0, 9.685755e-08, -3.907985e-14, 0.99999934, -0.60591125, 0, 1.6545649)
+shape = SubResource("BoxShape3D_hwiky")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="zastávka/StaticBody3D"]
+transform = Transform3D(0.99998486, 1.110223e-16, -1.9930303e-07, 0, 1, 0, 9.685755e-08, -3.907985e-14, 0.99999934, 0.2330246, 0, 1.6700048)
+shape = SubResource("BoxShape3D_hwiky")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="zastávka/StaticBody3D"]
+transform = Transform3D(0.9999541, 3.330669e-16, -6.03497e-07, 0, 1, 0, 2.9057264e-07, -1.1723955e-13, 0.99999803, -1.6736012, 0, 1.6666374)
+shape = SubResource("BoxShape3D_hwiky")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="zastávka/StaticBody3D"]
+transform = Transform3D(0.99996936, 2.7755576e-16, -3.9767474e-07, 0, 1, 0, 1.937151e-07, -9.947598e-14, 0.99999833, 0.57978535, 0, -1.6716156)
+shape = SubResource("BoxShape3D_hwiky")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="zastávka/StaticBody3D"]
+transform = Transform3D(0.9999691, 1.110223e-16, -3.9767474e-07, 0, 1, 0, 1.937151e-07, -9.947598e-14, 0.99999833, -1.8243895, 0, -1.7158637)
+shape = SubResource("BoxShape3D_hwiky")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="zastávka/StaticBody3D"]
+transform = Transform3D(0.99996924, 1.6653345e-16, -3.9767474e-07, 0, 1, 0, 1.937151e-07, -9.947598e-14, 0.99999833, -0.92226696, 0, -1.6992607)
+shape = SubResource("BoxShape3D_hwiky")
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="zastávka/StaticBody3D"]
+transform = Transform3D(0.9999693, 2.220446e-16, -3.9767474e-07, 0, 1, 0, 1.937151e-07, -9.947598e-14, 0.99999833, 1.6368809, 0, -1.6521602)
+shape = SubResource("BoxShape3D_hwiky")
+
+[node name="zastávka2" parent="." instance=ExtResource("12_r8ukj")]
+transform = Transform3D(-6.9539614, 4.656613e-10, -0.058516543, -0.0058197808, 6.841245, 0.31621066, 0.086344786, 0.46111143, -4.6914387, 81.73788, 15.811159, -32.23856)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="zastávka2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="zastávka2/StaticBody3D"]
+transform = Transform3D(0.99997085, 1.110223e-16, -3.8929284e-07, 0, 1, 0, 1.8067658e-07, -3.907985e-14, 0.99999934, -0.07575703, -0.74845326, -1.4324517)
+shape = SubResource("BoxShape3D_r8ukj")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="zastávka2/StaticBody3D"]
+transform = Transform3D(0.99997073, 1.110223e-16, -3.9115548e-07, 0, 1, 0, 1.8253922e-07, -3.907985e-14, 0.99999934, -0.099770546, -0.74845326, 1.4212294)
+shape = SubResource("BoxShape3D_r8ukj")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="zastávka2/StaticBody3D"]
+transform = Transform3D(0.99998033, 1.110223e-16, -2.6077032e-07, 0, 1, 0, 1.2107193e-07, -3.907985e-14, 0.99999934, -0.027849197, -0.0854491, 1.7439203)
+shape = SubResource("BoxShape3D_1colc")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="zastávka2/StaticBody3D"]
+transform = Transform3D(0.99997497, 1.110223e-16, -3.3341348e-07, 0, 1, 0, 1.6018748e-07, -3.907985e-14, 0.99999934, -1.4485064, -0.0854491, -1.740047)
+shape = SubResource("BoxShape3D_1colc")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="zastávka2/StaticBody3D"]
+transform = Transform3D(0.9999703, 1.110223e-16, -3.9674342e-07, 0, 1, 0, 1.8253922e-07, -3.907985e-14, 0.99999934, 1.126544, -0.0854491, -1.6874251)
+shape = SubResource("BoxShape3D_1colc")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="zastávka2/StaticBody3D"]
+transform = Transform3D(0.99998486, 1.110223e-16, -1.9930303e-07, 0, 1, 0, 9.685755e-08, -3.907985e-14, 0.99999934, 0.2330246, 0, 1.6700048)
+shape = SubResource("BoxShape3D_hwiky")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="zastávka2/StaticBody3D"]
+transform = Transform3D(0.99998444, 1.110223e-16, -2.0489097e-07, 0, 1, 0, 1.0058284e-07, -3.907985e-14, 0.99999934, 1.7958498, 0, 1.6881094)
+shape = SubResource("BoxShape3D_hwiky")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="zastávka2/StaticBody3D"]
+transform = Transform3D(0.9999847, 1.110223e-16, -2.0116568e-07, 0, 1, 0, 9.685755e-08, -3.907985e-14, 0.99999934, 0.90396214, 0, 1.682353)
+shape = SubResource("BoxShape3D_hwiky")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="zastávka2/StaticBody3D"]
+transform = Transform3D(0.9999848, 1.110223e-16, -2.0023435e-07, 0, 1, 0, 9.685755e-08, -3.907985e-14, 0.99999934, -0.60591125, 0, 1.6545649)
+shape = SubResource("BoxShape3D_hwiky")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="zastávka2/StaticBody3D"]
+transform = Transform3D(0.99998486, 1.110223e-16, -1.9930303e-07, 0, 1, 0, 9.685755e-08, -3.907985e-14, 0.99999934, 0.2330246, 0, 1.6700048)
+shape = SubResource("BoxShape3D_hwiky")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="zastávka2/StaticBody3D"]
+transform = Transform3D(0.9999541, 3.330669e-16, -6.03497e-07, 0, 1, 0, 2.9057264e-07, -1.1723955e-13, 0.99999803, -1.6736012, 0, 1.6666374)
+shape = SubResource("BoxShape3D_hwiky")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="zastávka2/StaticBody3D"]
+transform = Transform3D(0.99996936, 2.7755576e-16, -3.9767474e-07, 0, 1, 0, 1.937151e-07, -9.947598e-14, 0.99999833, 0.57978535, 0, -1.6716156)
+shape = SubResource("BoxShape3D_hwiky")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="zastávka2/StaticBody3D"]
+transform = Transform3D(0.9999691, 1.110223e-16, -3.9767474e-07, 0, 1, 0, 1.937151e-07, -9.947598e-14, 0.99999833, -1.8243895, 0, -1.7158637)
+shape = SubResource("BoxShape3D_hwiky")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="zastávka2/StaticBody3D"]
+transform = Transform3D(0.99996924, 1.6653345e-16, -3.9767474e-07, 0, 1, 0, 1.937151e-07, -9.947598e-14, 0.99999833, -0.92226696, 0, -1.6992607)
+shape = SubResource("BoxShape3D_hwiky")
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="zastávka2/StaticBody3D"]
+transform = Transform3D(0.9999693, 2.220446e-16, -3.9767474e-07, 0, 1, 0, 1.937151e-07, -9.947598e-14, 0.99999833, 1.6368809, 0, -1.6521602)
+shape = SubResource("BoxShape3D_hwiky")
+
+[node name="Root Scene9" parent="." instance=ExtResource("10_da165")]
+transform = Transform3D(-0.2530505, 0, -0.005642645, -0.00043581025, 0.24607722, 0.014817127, 0.0064658443, 0.016586019, -0.2198336, 81.289406, 7.837123, 22.515818)

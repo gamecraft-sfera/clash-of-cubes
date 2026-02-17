@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=4 uid="uid://b5kqkh7wg1kn0"]
+[gd_scene load_steps=7 format=4 uid="uid://b5kqkh7wg1kn0"]
 
 [ext_resource type="PackedScene" uid="uid://dokn2mkjbp6u7" path="res://Meshy_AI_pepa1_0217162417_texture.glb" id="1_vk1bi"]
 [ext_resource type="Texture2D" uid="uid://c433ay84j0swr" path="res://Meshy_AI_pepa1_0217162417_texture_Baked_BaseColor.png" id="2_8iju2"]
-[ext_resource type="Texture2D" uid="uid://dk6o5bjyg1ltt" path="res://Meshy_AI_pepa1_0217162417_texture_Baked_MetallicRoughness.png" id="3_7vd5q"]
 [ext_resource type="Texture2D" uid="uid://br0w3wj7lmpyf" path="res://Meshy_AI_pepa1_0217162417_texture_Baked_Normal.png" id="4_pr6yj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k8v55"]
@@ -10,10 +9,9 @@ resource_name = "BakedMaterial"
 cull_mode = 2
 no_depth_test = true
 albedo_texture = ExtResource("2_8iju2")
-metallic = 1.0
-metallic_texture = ExtResource("3_7vd5q")
+metallic = 0.72
 metallic_texture_channel = 2
-roughness_texture = ExtResource("3_7vd5q")
+roughness = 0.69
 roughness_texture_channel = 1
 normal_enabled = true
 normal_texture = ExtResource("4_pr6yj")
