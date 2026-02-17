@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cxen2x3qhr0vy"]
+[gd_scene load_steps=27 format=3 uid="uid://cxen2x3qhr0vy"]
 
 [ext_resource type="Texture2D" uid="uid://ddscp3b6mfe7o" path="res://AllSkyFree_Sky_EpicBlueSunset_Equirect.png" id="1_gophc"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ots34"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bvxq4we7xegx3" path="res://Bus stop sign.glb" id="10_da165"]
 [ext_resource type="PackedScene" uid="uid://uw0b2hapsp7c" path="res://Bridge (1).glb" id="11_r8ukj"]
 [ext_resource type="PackedScene" uid="uid://cavvxxhln54gn" path="res://zastávka.tscn" id="12_r8ukj"]
+[ext_resource type="PackedScene" uid="uid://c056ejwtrgyrg" path="res://Arch.glb" id="13_1colc"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_p0nl4"]
 panorama = ExtResource("1_gophc")
@@ -468,6 +469,9 @@ shape = SubResource("BoxShape3D_hwiky")
 transform = Transform3D(0.9999693, 2.220446e-16, -3.9767474e-07, 0, 1, 0, 1.937151e-07, -9.947598e-14, 0.99999833, 1.6368809, 0, -1.6521602)
 shape = SubResource("BoxShape3D_hwiky")
 
+[node name="Root Scene" parent="zastávka/StaticBody3D" instance=ExtResource("13_1colc")]
+transform = Transform3D(0.22905365, 0, 0, 0, 0.21041204, 0, 0, -1.3335114e-09, 0.21265525, -0.23850727, -0.5070473, -1.8657527)
+
 [node name="zastávka2" parent="." instance=ExtResource("12_r8ukj")]
 transform = Transform3D(-6.9539614, 4.656613e-10, -0.058516543, -0.0058197808, 6.841245, 0.31621066, 0.086344786, 0.46111143, -4.6914387, 81.73788, 15.811159, -32.23856)
 
@@ -532,6 +536,9 @@ shape = SubResource("BoxShape3D_hwiky")
 [node name="CollisionShape3D15" type="CollisionShape3D" parent="zastávka2/StaticBody3D"]
 transform = Transform3D(0.9999693, 2.220446e-16, -3.9767474e-07, 0, 1, 0, 1.937151e-07, -9.947598e-14, 0.99999833, 1.6368809, 0, -1.6521602)
 shape = SubResource("BoxShape3D_hwiky")
+
+[node name="Root Scene10" parent="zastávka2" instance=ExtResource("13_1colc")]
+transform = Transform3D(-0.26879716, -8.919009e-11, 0.0017893232, 0, 0.21596672, 0, -0.0049471464, 1.23177415e-08, -0.21263874, -0.20903969, -0.5303433, -1.8423986)
 
 [node name="Root Scene9" parent="." instance=ExtResource("10_da165")]
 transform = Transform3D(-0.2530505, 0, -0.005642645, -0.00043581025, 0.24607722, 0.014817127, 0.0064658443, 0.016586019, -0.2198336, 81.289406, 7.837123, 22.515818)
