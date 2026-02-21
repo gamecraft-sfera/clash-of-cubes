@@ -3,8 +3,10 @@
 # Quality Godot First Person Controller v2
 
 
-extends CharacterBody3D
+class_name MainCharacter extends CharacterBody3D
 
+@export_group("Miky parametry")
+@export var health: int = 100
 
 #region Character Export Group
 
@@ -161,6 +163,8 @@ func _ready():
 
 
 func _process(_delta):
+	%hp.text = str(health)
+	
 	if pausing_enabled:
 		handle_pausing()
 	

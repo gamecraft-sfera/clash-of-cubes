@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cxen2x3qhr0vy"]
+[gd_scene load_steps=29 format=3 uid="uid://cxen2x3qhr0vy"]
 
 [ext_resource type="Texture2D" uid="uid://ddscp3b6mfe7o" path="res://AllSkyFree_Sky_EpicBlueSunset_Equirect.png" id="1_gophc"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ots34"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://uw0b2hapsp7c" path="res://Bridge (1).glb" id="11_r8ukj"]
 [ext_resource type="PackedScene" uid="uid://cavvxxhln54gn" path="res://zastávka.tscn" id="12_r8ukj"]
 [ext_resource type="PackedScene" uid="uid://c056ejwtrgyrg" path="res://Arch.glb" id="13_1colc"]
+[ext_resource type="PackedScene" uid="uid://5peu1nguqrx7" path="res://rytir.tscn" id="14_hwiky"]
+[ext_resource type="PackedScene" uid="uid://donagxcbkcpnp" path="res://spawner.tscn" id="15_mhwaj"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_p0nl4"]
 panorama = ExtResource("1_gophc")
@@ -554,3 +556,49 @@ transform = Transform3D(3.7032557, 0, 0, 0, 3.0975547, -0.06724906, 0, 0.2087802
 
 [node name="Root Scene12" parent="." instance=ExtResource("2_y5hus")]
 transform = Transform3D(3.2247496, 0, 0, 0, 3.0059614, -0.08395793, 0, 0.20260677, 1.2456367, 76.00785, 8.195542, 22.99812)
+
+[node name="rytir" parent="." node_paths=PackedStringArray("player") instance=ExtResource("14_hwiky")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4522305, -9.879415)
+player = NodePath("../main Character")
+
+[node name="rytir2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("14_hwiky")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.202162, 9.183607, -7.8759966)
+player = NodePath("../main Character")
+
+[node name="rytir3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("14_hwiky")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.3545, 4.0114083, -3.3391848)
+player = NodePath("../main Character")
+
+[node name="rytir4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("14_hwiky")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.422588, 6.4575825, 13.6841135)
+player = NodePath("../main Character")
+
+[node name="Spawner" parent="." node_paths=PackedStringArray("player") instance=ExtResource("15_mhwaj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.921422, 2.0495663, 0.13814414)
+enemy_scene = ExtResource("14_hwiky")
+player = NodePath("../main Character")
+
+[node name="Spawner2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("15_mhwaj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.390041, 18.16536, 10.333424)
+enemy_scene = ExtResource("14_hwiky")
+player = NodePath("../main Character")
+
+[node name="Spawner3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("15_mhwaj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.303295, 20.126413, -18.761606)
+enemy_scene = ExtResource("14_hwiky")
+player = NodePath("../main Character")
+
+[node name="Spawner4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("15_mhwaj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.046394, 5.0715876, 7.5273466)
+enemy_scene = ExtResource("14_hwiky")
+player = NodePath("../main Character")
+
+[node name="Spawner5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("15_mhwaj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.05657, 1.4112483, -42.19245)
+enemy_scene = ExtResource("14_hwiky")
+player = NodePath("../main Character")
+
+[node name="Spawner6" parent="." node_paths=PackedStringArray("player") instance=ExtResource("15_mhwaj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.0475, -4.184487, 40.828304)
+enemy_scene = ExtResource("14_hwiky")
+player = NodePath("../main Character")
