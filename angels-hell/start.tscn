@@ -470,7 +470,7 @@ transform = Transform3D(0.9999693, 2.220446e-16, -3.9767474e-07, 0, 1, 0, 1.9371
 shape = SubResource("BoxShape3D_hwiky")
 
 [node name="Root Scene" parent="zastávka/StaticBody3D" instance=ExtResource("13_1colc")]
-transform = Transform3D(0.22905365, 0, 0, 0, 0.21041204, 0, 0, -1.3335114e-09, 0.21265525, -0.23850727, -0.5070473, -1.8657527)
+transform = Transform3D(0.35040975, 0, 0, 0, 0.21041207, 0, 0, -1.3335114e-09, 0.21265525, -0.16173172, -0.5070473, -1.8657527)
 
 [node name="zastávka2" parent="." instance=ExtResource("12_r8ukj")]
 transform = Transform3D(-6.9539614, 4.656613e-10, -0.058516543, -0.0058197808, 6.841245, 0.31621066, 0.086344786, 0.46111143, -4.6914387, 81.73788, 15.811159, -32.23856)
@@ -538,7 +538,19 @@ transform = Transform3D(0.9999693, 2.220446e-16, -3.9767474e-07, 0, 1, 0, 1.9371
 shape = SubResource("BoxShape3D_hwiky")
 
 [node name="Root Scene10" parent="zastávka2" instance=ExtResource("13_1colc")]
-transform = Transform3D(-0.26879716, -8.919009e-11, 0.0017893232, 0, 0.21596672, 0, -0.0049471464, 1.23177415e-08, -0.21263874, -0.20903969, -0.5303433, -1.8423986)
+transform = Transform3D(-0.3651045, -8.919007e-11, 0.0017893227, 0, 0.21596675, 0, -0.006719663, 1.2317732e-08, -0.21263865, -0.21633816, -0.5303433, -1.8425331)
+
+[node name="Root Scene11" parent="zastávka2" instance=ExtResource("2_y5hus")]
+transform = Transform3D(-0.40121543, -1.676215e-10, 0.0017893227, 0, 0.40588215, 0, -0.0073842737, 2.3149623e-08, -0.21263868, -1.3875446, -0.50689507, -1.8662362)
 
 [node name="Root Scene9" parent="." instance=ExtResource("10_da165")]
 transform = Transform3D(-0.2530505, 0, -0.005642645, -0.00043581025, 0.24607722, 0.014817127, 0.0064658443, 0.016586019, -0.2198336, 81.289406, 7.837123, 22.515818)
+
+[node name="Root Scene10" parent="." instance=ExtResource("2_y5hus")]
+transform = Transform3D(3.4743006, 0, 0, 0, 3.1210809, -0.06724906, 0, 0.21036598, 0.9977362, 73.96961, 11.360196, -23.954044)
+
+[node name="Root Scene11" parent="." instance=ExtResource("2_y5hus")]
+transform = Transform3D(3.7032557, 0, 0, 0, 3.0975547, -0.06724906, 0, 0.20878027, 0.9977362, 93.73944, 8.208684, 22.80308)
+
+[node name="Root Scene12" parent="." instance=ExtResource("2_y5hus")]
+transform = Transform3D(3.2247496, 0, 0, 0, 3.0059614, -0.08395793, 0, 0.20260677, 1.2456367, 76.00785, 8.195542, 22.99812)
