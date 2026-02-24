@@ -176,7 +176,7 @@ transform = Transform3D(1, 0, 0, 0, 0.9977362, -0.06724906, 0, 0.06724906, 0.997
 [node name="StaticBody3D" type="StaticBody3D" parent="Root Scene5"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Root Scene5/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0740745, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004135132, 1.0740745, 0)
 shape = SubResource("CylinderShape3D_4a3qj")
 
 [node name="Root Scene6" parent="." instance=ExtResource("5_4a3qj")]
@@ -188,8 +188,41 @@ transform = Transform3D(1, 0, 0, 0, 0.9977362, -0.06724906, 0, 0.06724906, 0.997
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0740745, 0)
 shape = SubResource("CylinderShape3D_4a3qj")
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Root Scene6/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0740745, 0)
+shape = SubResource("CylinderShape3D_4a3qj")
+
+[node name="Root Scene9" parent="." instance=ExtResource("5_4a3qj")]
+transform = Transform3D(1, 0, 0, 0, 0.9977362, -0.06724906, 0, 0.06724906, 0.9977362, 82.83242, 10.221025, -0.60515743)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Root Scene9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Root Scene9/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0740745, 0)
+shape = SubResource("CylinderShape3D_4a3qj")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Root Scene9/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0740745, 0)
+shape = SubResource("CylinderShape3D_4a3qj")
+
+[node name="Root Scene10" parent="." instance=ExtResource("5_4a3qj")]
+transform = Transform3D(1, 0, 0, 0, 0.9977362, -0.06724906, 0, 0.06724906, 0.9977362, 82.83242, 12.334691, -0.4626928)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Root Scene10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Root Scene10/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0740745, 0)
+shape = SubResource("CylinderShape3D_4a3qj")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Root Scene10/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0740745, 0)
+shape = SubResource("CylinderShape3D_4a3qj")
+
 [node name="AngelStatue2" parent="." instance=ExtResource("7_g38d0")]
 transform = Transform3D(-0.03977215, 0, -0.57112616, -0.04763057, 0.76652217, 0.002156739, 0.70666784, 0.051664855, -0.03199832, 24.36536, 6.06348, 1.282413)
+
+[node name="AngelStatue3" parent="." instance=ExtResource("7_g38d0")]
+transform = Transform3D(-0.03977215, 0, -0.57112616, -0.04763057, 0.7665218, 0.0021567352, 0.70666784, 0.05166484, -0.031998284, 82.65389, 16.445238, -0.22836101)
 
 [node name="tower wall" parent="." instance=ExtResource("8_pob1m")]
 transform = Transform3D(10.891398, 0, 0, 0, 10.866743, -0.69941396, 0, 0.73243594, 10.376809, 20.55622, 1.229423, -18.240253)
@@ -247,6 +280,34 @@ use_collision = true
 collision_layer = 2
 collision_mask = 0
 radius = 4.282033
+
+[node name="koule8" type="CSGSphere3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.126698, 9.618223, 16.402018)
+use_collision = true
+collision_layer = 2
+collision_mask = 0
+radius = 4.282033
+
+[node name="koule9" type="CSGSphere3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.126698, 9.618223, 16.402018)
+use_collision = true
+collision_layer = 2
+collision_mask = 0
+radius = 4.282033
+
+[node name="koule10" type="CSGSphere3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 38.361214, 9.977411, -24.156517)
+use_collision = true
+collision_layer = 2
+collision_mask = 0
+radius = 4.47618
+
+[node name="koule11" type="CSGSphere3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 17.874615, 10.736096, 22.227629)
+use_collision = true
+collision_layer = 2
+collision_mask = 0
+radius = 1.6908939
 
 [node name="koule7" type="CSGSphere3D" parent="."]
 transform = Transform3D(1.311342e-07, 0, 1, 0, 1, -8.881784e-16, -1, 0, 1.311342e-07, 57.739407, 19.045967, -10.366055)
