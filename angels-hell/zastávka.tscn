@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cavvxxhln54gn"]
+
+[ext_resource type="PackedScene" uid="uid://cwf54rrd2t75f" path="res://zastávka.glb" id="1_tiv4q"]
+
+[node name="zastávka" instance=ExtResource("1_tiv4q")]
+
+[node name="Válec" parent="." index="362"]
+visible = false

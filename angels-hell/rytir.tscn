@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://5peu1nguqrx7"]
+
+[ext_resource type="PackedScene" uid="uid://dsyt1x4nwe1yj" path="res://Meshy_AI_bůh_0217162433_texture.glb" id="1_atwil"]
+[ext_resource type="Script" uid="uid://dhpr4ka3qgihq" path="res://rytir.gd" id="1_twy26"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_twy26"]
+radius = 0.58203125
+height = 1.7009277
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bomly"]
+radius = 0.2998047
+height = 1.3935547
+
+[node name="rytir" type="CharacterBody3D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_twy26")
+
+[node name="Meshy_AI_bůh_0217162433_texture" parent="." instance=ExtResource("1_atwil")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.22769022, -0.2096529)
+shape = SubResource("CapsuleShape3D_twy26")
+
+[node name="PauseTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 0.5946404, 0.8039918, 0, -0.8039918, 0.5946404, 0, 0.02203685, 0.062102437)
+shape = SubResource("CapsuleShape3D_bomly")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
