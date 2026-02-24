@@ -1,6 +1,6 @@
 extends CharacterBody3D
 @export var player: CharacterBody3D
-@export var speed: float = 2
+@export var speed: float = 4
 @export var damage: int = 10
 
 @export var positin_offset: float = 2

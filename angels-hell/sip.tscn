@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjrw0xgd1b8gp"]
+
+[ext_resource type="Script" uid="uid://1014gs4cgmct" path="res://sip.gd" id="1_ktpvq"]
+[ext_resource type="PackedScene" uid="uid://civyudnvob5ba" path="res://Arrow.glb" id="2_cbrme"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eoo2y"]
+radius = 0.10449219
+height = 1.3720703
+
+[node name="sip" type="Area3D"]
+script = ExtResource("1_ktpvq")
+speed = 5.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.012967408, 0.9999159, 0, -0.9999159, -0.012967408, 0, 0.53565454, -0.019099832)
+shape = SubResource("CapsuleShape3D_eoo2y")
+
+[node name="Arrow" parent="." instance=ExtResource("2_cbrme")]
+transform = Transform3D(0.013229179, 0, -0.9999125, 0, 1, 0, 0.9999125, 0, 0.013229179, 0, 0, 0)

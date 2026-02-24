@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4jhhdlowduop"]
+
+[ext_resource type="PackedScene" uid="uid://cyjs2c2b0kw87" path="res://Meshy_AI_Archer_s_Flight_0217162406_texture.glb" id="1_mbddb"]
+[ext_resource type="Script" uid="uid://d2extbt1c3lko" path="res://lucisnik.gd" id="1_s4ijg"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3iev3"]
+radius = 0.60302734
+height = 1.9726563
+
+[node name="lucisnik" type="CharacterBody3D"]
+script = ExtResource("1_s4ijg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09570885, 1.3113022e-06)
+shape = SubResource("CapsuleShape3D_3iev3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="Meshy_AI_Archer_s_Flight_0217162406_texture" parent="." instance=ExtResource("1_mbddb")]
+transform = Transform3D(1, 0, 0, 0, 0.9977362, -0.06724906, 0, 0.06724906, 0.9977362, 0, 0, 0)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

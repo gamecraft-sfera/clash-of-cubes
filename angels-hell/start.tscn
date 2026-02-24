@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cxen2x3qhr0vy"]
+[gd_scene load_steps=31 format=3 uid="uid://cxen2x3qhr0vy"]
 
 [ext_resource type="Texture2D" uid="uid://ddscp3b6mfe7o" path="res://AllSkyFree_Sky_EpicBlueSunset_Equirect.png" id="1_gophc"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ots34"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://c056ejwtrgyrg" path="res://Arch.glb" id="13_1colc"]
 [ext_resource type="PackedScene" uid="uid://5peu1nguqrx7" path="res://rytir.tscn" id="14_hwiky"]
 [ext_resource type="PackedScene" uid="uid://donagxcbkcpnp" path="res://spawner.tscn" id="15_mhwaj"]
+[ext_resource type="PackedScene" uid="uid://d4jhhdlowduop" path="res://lucisnik.tscn" id="16_3iev3"]
+[ext_resource type="PackedScene" uid="uid://bjrw0xgd1b8gp" path="res://sip.tscn" id="17_3iev3"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_p0nl4"]
 panorama = ExtResource("1_gophc")
@@ -606,16 +608,16 @@ transform = Transform3D(-0.3651045, -8.919007e-11, 0.0017893227, 0, 0.21596675, 
 [node name="Root Scene11" parent="zastávka2" instance=ExtResource("2_y5hus")]
 transform = Transform3D(-0.40121543, -1.676215e-10, 0.0017893227, 0, 0.40588215, 0, -0.0073842737, 2.3149623e-08, -0.21263868, -1.3875446, -0.50689507, -1.8662362)
 
-[node name="Root Scene9" parent="." instance=ExtResource("10_da165")]
+[node name="Root Scene11" parent="." instance=ExtResource("10_da165")]
 transform = Transform3D(-0.2530505, 0, -0.005642645, -0.00043581025, 0.24607722, 0.014817127, 0.0064658443, 0.016586019, -0.2198336, 81.289406, 7.837123, 22.515818)
 
-[node name="Root Scene10" parent="." instance=ExtResource("2_y5hus")]
+[node name="Root Scene12" parent="." instance=ExtResource("2_y5hus")]
 transform = Transform3D(3.4743006, 0, 0, 0, 3.1210809, -0.06724906, 0, 0.21036598, 0.9977362, 73.96961, 11.360196, -23.954044)
 
-[node name="Root Scene11" parent="." instance=ExtResource("2_y5hus")]
+[node name="Root Scene13" parent="." instance=ExtResource("2_y5hus")]
 transform = Transform3D(3.7032557, 0, 0, 0, 3.0975547, -0.06724906, 0, 0.20878027, 0.9977362, 93.73944, 8.208684, 22.80308)
 
-[node name="Root Scene12" parent="." instance=ExtResource("2_y5hus")]
+[node name="Root Scene14" parent="." instance=ExtResource("2_y5hus")]
 transform = Transform3D(3.2247496, 0, 0, 0, 3.0059614, -0.08395793, 0, 0.20260677, 1.2456367, 76.00785, 8.195542, 22.99812)
 
 [node name="rytir" parent="." node_paths=PackedStringArray("player") instance=ExtResource("14_hwiky")]
@@ -637,6 +639,10 @@ player = NodePath("../main Character")
 [node name="Spawner" parent="." node_paths=PackedStringArray("player") instance=ExtResource("15_mhwaj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.921422, 2.0495663, 0.13814414)
 enemy_scene = ExtResource("14_hwiky")
+player = NodePath("../main Character")
+
+[node name="rytir5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("14_hwiky")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.04692, 9.751488, -0.71817136)
 player = NodePath("../main Character")
 
 [node name="Spawner2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("15_mhwaj")]
@@ -663,3 +669,10 @@ player = NodePath("../main Character")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.0475, -4.184487, 40.828304)
 enemy_scene = ExtResource("14_hwiky")
 player = NodePath("../main Character")
+
+[node name="lucisnik" parent="." node_paths=PackedStringArray("player") instance=ExtResource("16_3iev3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6154454, 2.4259317, -4.046037)
+player = NodePath("../main Character")
+
+[node name="sip" parent="." instance=ExtResource("17_3iev3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.887699, 7.669947, -14.240263)
