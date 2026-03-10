@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=4 uid="uid://beol8pikkhgc1"]
 
-[ext_resource type="PackedScene" uid="uid://s7ygtumn3s7j" path="res://AngelStatue.glb" id="1_mrj62"]
+[ext_resource type="PackedScene" uid="uid://s7ygtumn3s7j" path="res://addons/fpc/AngelStatue.glb" id="1_mrj62"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mrj62"]
 resource_name = "Angel_Pilar"
