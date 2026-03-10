@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cxen2x3qhr0vy"]
+[gd_scene load_steps=33 format=3 uid="uid://cxen2x3qhr0vy"]
 
 [ext_resource type="Texture2D" uid="uid://ddscp3b6mfe7o" path="res://AllSkyFree_Sky_EpicBlueSunset_Equirect.png" id="1_gophc"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ots34"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://donagxcbkcpnp" path="res://spawner.tscn" id="15_mhwaj"]
 [ext_resource type="PackedScene" uid="uid://d4jhhdlowduop" path="res://lucisnik.tscn" id="16_3iev3"]
 [ext_resource type="PackedScene" uid="uid://bjrw0xgd1b8gp" path="res://sip.tscn" id="17_3iev3"]
+[ext_resource type="Shader" uid="uid://bugeewnpc4ha2" path="res://shader.gdshader" id="18_wvlwx"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_p0nl4"]
 panorama = ExtResource("1_gophc")
@@ -63,6 +64,13 @@ size = Vector3(1.8597679, 0.82910156, 0.095214844)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hwiky"]
 size = Vector3(0.11526489, 1, 0.4234314)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r34np"]
+shader = ExtResource("18_wvlwx")
+shader_parameter/pixel_size = 3.0
+shader_parameter/vhs_intensity = 3.0
+shader_parameter/noise_intensity = 0.15
+shader_parameter/opacity = 0.5
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 0.9977362, 0.06724906, 0, -0.06724906, 0.9977362, 0, 0, 0)
@@ -698,3 +706,11 @@ player = NodePath("../main Character")
 [node name="lucisnik6" parent="." node_paths=PackedStringArray("player") instance=ExtResource("16_3iev3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.571136, 8.021998, 17.918423)
 player = NodePath("../main Character")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_r34np")
+offset_right = 1161.0
+offset_bottom = 654.0
+mouse_filter = 2
