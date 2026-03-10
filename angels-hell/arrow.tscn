@@ -8,7 +8,7 @@ resource_name = "Material.001"
 albedo_texture = ExtResource("2_acd0x")
 roughness = 0.90392154
 emission_enabled = true
-emission = Color(0.51718444, 0.5171845, 0.51718444, 1)
+emission = Color(0.9079417, 0.9079417, 0.90794164, 1)
 emission_energy_multiplier = 7.81
 texture_filter = 2
 
@@ -48,6 +48,3 @@ shadow_mesh = SubResource("ArrayMesh_i4m3f")
 
 [node name="ARROW_Cube_033" parent="." index="0"]
 mesh = SubResource("ArrayMesh_fo0gb")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)

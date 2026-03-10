@@ -29,6 +29,8 @@ sky_material = SubResource("PanoramaSkyMaterial_p0nl4")
 background_mode = 2
 sky = SubResource("Sky_da165")
 tonemap_mode = 2
+glow_enabled = true
+glow_intensity = 1.93
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oiuna"]
 size = Vector3(2.001831, 3.1200562, 0.40148926)
@@ -670,9 +672,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.0475, -4.184487, 40.828304
 enemy_scene = ExtResource("14_hwiky")
 player = NodePath("../main Character")
 
+[node name="sip" parent="." instance=ExtResource("17_3iev3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.887699, 7.669947, -14.240262)
+
 [node name="lucisnik" parent="." node_paths=PackedStringArray("player") instance=ExtResource("16_3iev3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6154454, 2.4259317, -4.046037)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.089509, 10.441334, -17.975906)
 player = NodePath("../main Character")
 
-[node name="sip" parent="." instance=ExtResource("17_3iev3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.887699, 7.669947, -14.240263)
+[node name="lucisnik2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("16_3iev3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.308197, 10.441334, -17.975906)
+player = NodePath("../main Character")
+
+[node name="lucisnik3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("16_3iev3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.589447, 10.441334, -17.975906)
+player = NodePath("../main Character")
+
+[node name="lucisnik4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("16_3iev3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.089509, 7.9699545, 18.69055)
+player = NodePath("../main Character")
+
+[node name="lucisnik5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("16_3iev3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.743866, 7.970521, 18.682161)
+player = NodePath("../main Character")
+
+[node name="lucisnik6" parent="." node_paths=PackedStringArray("player") instance=ExtResource("16_3iev3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.571136, 8.021998, 17.918423)
+player = NodePath("../main Character")

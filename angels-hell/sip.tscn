@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bjrw0xgd1b8gp"]
 
 [ext_resource type="Script" uid="uid://1014gs4cgmct" path="res://sip.gd" id="1_ktpvq"]
-[ext_resource type="PackedScene" uid="uid://civyudnvob5ba" path="res://Arrow.glb" id="2_cbrme"]
+[ext_resource type="PackedScene" uid="uid://7pnu6kaf0m0u" path="res://arrow.tscn" id="2_ktpvq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eoo2y"]
 radius = 0.10449219
@@ -15,5 +15,5 @@ speed = 5.0
 transform = Transform3D(1, 0, 0, 0, -0.012967408, 0.9999159, 0, -0.9999159, -0.012967408, 0, 0.53565454, -0.019099832)
 shape = SubResource("CapsuleShape3D_eoo2y")
 
-[node name="Arrow" parent="." instance=ExtResource("2_cbrme")]
-transform = Transform3D(0.013229179, 0, -0.9999125, 0, 1, 0, 0.9999125, 0, 0.013229179, 0, 0, 0)
+[node name="Arrow2" parent="." instance=ExtResource("2_ktpvq")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
