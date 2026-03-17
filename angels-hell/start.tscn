@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cxen2x3qhr0vy"]
+[gd_scene load_steps=36 format=3 uid="uid://cxen2x3qhr0vy"]
 
 [ext_resource type="Texture2D" uid="uid://ddscp3b6mfe7o" path="res://AllSkyFree_Sky_EpicBlueSunset_Equirect.png" id="1_gophc"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ots34"]
@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://d4jhhdlowduop" path="res://lucisnik.tscn" id="16_3iev3"]
 [ext_resource type="PackedScene" uid="uid://bjrw0xgd1b8gp" path="res://sip.tscn" id="17_3iev3"]
 [ext_resource type="Shader" uid="uid://bugeewnpc4ha2" path="res://shader.gdshader" id="18_wvlwx"]
-[ext_resource type="PackedScene" uid="uid://cmb2psrkutfew" path="res://vlak.glb" id="19_r34np"]
+[ext_resource type="PackedScene" uid="uid://cgqnipqlrf15c" path="res://vlak.tscn" id="19_r34np"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_p0nl4"]
 panorama = ExtResource("1_gophc")
@@ -64,7 +64,13 @@ size = Vector3(4.1267395, 0.36376953, 0.9517822)
 size = Vector3(1.8597679, 0.82910156, 0.095214844)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hwiky"]
-size = Vector3(0.11526489, 1, 0.4234314)
+size = Vector3(0.11526489, 0.7685547, 0.1355648)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r34np"]
+size = Vector3(4.3440094, 0.20742798, 0.3626709)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aj1oh"]
+size = Vector3(4.0681076, 0.9239502, 0.16711426)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r34np"]
 shader = ExtResource("18_wvlwx")
@@ -543,6 +549,22 @@ shape = SubResource("BoxShape3D_hwiky")
 [node name="Root Scene" parent="zastávka/StaticBody3D" instance=ExtResource("13_1colc")]
 transform = Transform3D(0.35040975, 0, 0, 0, 0.21041207, 0, 0, -1.3335114e-09, 0.21265525, -0.16173172, -0.5070473, -1.8657527)
 
+[node name="CollisionShape3D19" type="CollisionShape3D" parent="zastávka/StaticBody3D"]
+transform = Transform3D(0.9999761, 1.110223e-16, -3.1851232e-07, 0, 1, 0, 1.527369e-07, -3.907985e-14, 0.99999934, 0.10798836, 1.0047314, 1.2190199)
+shape = SubResource("BoxShape3D_r34np")
+
+[node name="CollisionShape3D20" type="CollisionShape3D" parent="zastávka/StaticBody3D"]
+transform = Transform3D(0.9999762, 1.1102233e-16, -3.1851232e-07, 0, 1.0000002, 0, 1.527369e-07, -4.0412118e-14, 0.9999994, -0.14526081, 1.004732, -1.2360277)
+shape = SubResource("BoxShape3D_r34np")
+
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="zastávka/StaticBody3D"]
+transform = Transform3D(0.9999913, 0.0037425463, 0.0006925687, 0.0028136536, -0.60436165, -0.79668427, -0.0025628936, 0.79670143, -0.60437185, 0.116057396, 0.7600994, 1.7196064)
+shape = SubResource("BoxShape3D_aj1oh")
+
+[node name="CollisionShape3D21" type="CollisionShape3D" parent="zastávka/StaticBody3D"]
+transform = Transform3D(1.0000002, 0.0037425826, 0.000692569, -0.0016246301, 0.58432794, -0.8115236, -0.0034417599, 0.8115096, 0.58430815, 0.00500679, 0.7549728, -1.6982851)
+shape = SubResource("BoxShape3D_aj1oh")
+
 [node name="zastávka2" parent="." instance=ExtResource("12_r8ukj")]
 transform = Transform3D(-6.9539614, 4.656613e-10, -0.058516543, -0.0058197808, 6.841245, 0.31621066, 0.086344786, 0.46111143, -4.6914387, 81.73788, 15.811159, -32.23856)
 
@@ -607,6 +629,26 @@ shape = SubResource("BoxShape3D_hwiky")
 [node name="CollisionShape3D15" type="CollisionShape3D" parent="zastávka2/StaticBody3D"]
 transform = Transform3D(0.9999693, 2.220446e-16, -3.9767474e-07, 0, 1, 0, 1.937151e-07, -9.947598e-14, 0.99999833, 1.6368809, 0, -1.6521602)
 shape = SubResource("BoxShape3D_hwiky")
+
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="zastávka2/StaticBody3D"]
+transform = Transform3D(-0.044155248, -0.99886787, -0.017501771, 0.7836007, -0.045497797, 0.61956507, -0.6196298, 0.013643146, 0.784732, 1.4018698, 0.94871855, 12.188343)
+shape = SubResource("BoxShape3D_hwiky")
+
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="zastávka2/StaticBody3D"]
+transform = Transform3D(0.99994504, 0.0039250865, -0.009710653, -0.010006138, 0.631937, -0.7749556, 0.003094892, 0.77501005, 0.63191986, -0.12999249, 0.75999904, -1.6992526)
+shape = SubResource("BoxShape3D_aj1oh")
+
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="zastávka2/StaticBody3D"]
+transform = Transform3D(0.9999913, 0.0037425463, 0.0006925687, 0.0028136536, -0.60436165, -0.79668427, -0.0025628936, 0.79670143, -0.60437185, 0.116057396, 0.7600994, 1.7196064)
+shape = SubResource("BoxShape3D_aj1oh")
+
+[node name="CollisionShape3D19" type="CollisionShape3D" parent="zastávka2/StaticBody3D"]
+transform = Transform3D(0.9999761, 1.110223e-16, -3.1851232e-07, 0, 1, 0, 1.527369e-07, -3.907985e-14, 0.99999934, 0.10798836, 1.0047314, 1.2190199)
+shape = SubResource("BoxShape3D_r34np")
+
+[node name="CollisionShape3D20" type="CollisionShape3D" parent="zastávka2/StaticBody3D"]
+transform = Transform3D(0.99997133, 1.110223e-16, -3.8277358e-07, 0, 1, 0, 1.7508864e-07, -3.907985e-14, 0.99999934, -0.11694908, 1.0047314, -1.3242655)
+shape = SubResource("BoxShape3D_r34np")
 
 [node name="Root Scene10" parent="zastávka2" instance=ExtResource("13_1colc")]
 transform = Transform3D(-0.3651045, -8.919007e-11, 0.0017893227, 0, 0.21596675, 0, -0.006719663, 1.2317732e-08, -0.21263865, -0.21633816, -0.5303433, -1.8425331)
@@ -704,6 +746,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.571136, 8.021998, 17.91842
 player = NodePath("../main Character")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_r34np")
@@ -712,4 +755,4 @@ offset_bottom = 3059.0
 mouse_filter = 2
 
 [node name="vlak" parent="." instance=ExtResource("19_r34np")]
-transform = Transform3D(0.01255592, 1.379661e-09, -0.51980025, -0.020895753, 0.33186045, -0.001412534, 0.31001854, 0.022367936, 0.020956965, 82.98951, 8.219369, 31.071016)
+transform = Transform3D(-4.3615284e-08, 2.8969245e-09, 0.9999999, 0.0662739, 0.9978015, 0, -0.9978015, 0.066273905, -4.3711385e-08, 84.06757, 8.326498, 30.994825)
