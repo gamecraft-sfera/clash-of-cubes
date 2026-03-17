@@ -431,6 +431,7 @@ unique_name_in_owner = true
 target_position = Vector3(0, -1, -100)
 collision_mask = 2
 collide_with_areas = true
+debug_shape_thickness = 5
 
 [node name="UserInterface" type="Control" parent="."]
 layout_mode = 3
@@ -469,6 +470,47 @@ theme_override_fonts/font = ExtResource("4_qaoyu")
 theme_override_font_sizes/font_size = 67
 text = "100"
 
+[node name="UpgradesControl" type="Control" parent="UserInterface"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="UserInterface/UpgradesControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UserInterface/UpgradesControl/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="speedbutton" type="Button" parent="UserInterface/UpgradesControl/CenterContainer/HBoxContainer"]
+layout_mode = 2
+text = "speed"
+
+[node name="jumpbutton" type="Button" parent="UserInterface/UpgradesControl/CenterContainer/HBoxContainer"]
+layout_mode = 2
+text = "jump"
+
+[node name="dashbutton" type="Button" parent="UserInterface/UpgradesControl/CenterContainer/HBoxContainer"]
+layout_mode = 2
+text = "dash"
+
+[node name="fastfollbutton" type="Button" parent="UserInterface/UpgradesControl/CenterContainer/HBoxContainer"]
+layout_mode = 2
+text = "fast foll"
+
+[node name="sprintspeedbutton" type="Button" parent="UserInterface/UpgradesControl/CenterContainer/HBoxContainer"]
+layout_mode = 2
+text = "sprint speed"
+
 [node name="CrouchCeilingDetection" type="ShapeCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("SphereShape3D_k4wwl")
@@ -476,3 +518,11 @@ target_position = Vector3(0, 0.5, 0)
 
 [node name="EditorModule" type="Node" parent="."]
 script = ExtResource("3_v3ckk")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="pressed" from="UserInterface/UpgradesControl/CenterContainer/HBoxContainer/speedbutton" to="." method="_on_speedbutton_pressed"]
+[connection signal="pressed" from="UserInterface/UpgradesControl/CenterContainer/HBoxContainer/jumpbutton" to="." method="_on_jumpbutton_pressed"]
+[connection signal="pressed" from="UserInterface/UpgradesControl/CenterContainer/HBoxContainer/fastfollbutton" to="." method="_on_fastfollbutton_pressed"]
+[connection signal="pressed" from="UserInterface/UpgradesControl/CenterContainer/HBoxContainer/sprintspeedbutton" to="." method="_on_sprintspeedbutton_pressed"]

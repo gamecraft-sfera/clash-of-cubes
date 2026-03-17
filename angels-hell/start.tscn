@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cxen2x3qhr0vy"]
+[gd_scene load_steps=37 format=3 uid="uid://cxen2x3qhr0vy"]
 
 [ext_resource type="Texture2D" uid="uid://ddscp3b6mfe7o" path="res://AllSkyFree_Sky_EpicBlueSunset_Equirect.png" id="1_gophc"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ots34"]
@@ -64,13 +64,16 @@ size = Vector3(4.1267395, 0.36376953, 0.9517822)
 size = Vector3(1.8597679, 0.82910156, 0.095214844)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hwiky"]
-size = Vector3(0.11526489, 0.7685547, 0.1355648)
+size = Vector3(0.11526489, 1.0830078, 0.33347392)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r34np"]
 size = Vector3(4.3440094, 0.20742798, 0.3626709)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_aj1oh"]
 size = Vector3(4.0681076, 0.9239502, 0.16711426)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_33vth"]
+size = Vector3(4.191101, 1, 0.13842773)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r34np"]
 shader = ExtResource("18_wvlwx")
@@ -515,11 +518,11 @@ transform = Transform3D(0.99998444, 1.110223e-16, -2.0489097e-07, 0, 1, 0, 1.005
 shape = SubResource("BoxShape3D_hwiky")
 
 [node name="CollisionShape3D8" type="CollisionShape3D" parent="zastávka/StaticBody3D"]
-transform = Transform3D(0.9999847, 1.110223e-16, -2.0116568e-07, 0, 1, 0, 9.685755e-08, -3.907985e-14, 0.99999934, 0.90396214, 0, 1.682353)
+transform = Transform3D(1.0000002, 1.1102233e-16, -2.0116572e-07, 0, 1.0000002, 0, 9.685755e-08, -4.0856207e-14, 0.9999994, 0.90396214, -0.15722668, 1.608069)
 shape = SubResource("BoxShape3D_hwiky")
 
 [node name="CollisionShape3D9" type="CollisionShape3D" parent="zastávka/StaticBody3D"]
-transform = Transform3D(0.9999848, 1.110223e-16, -2.0023435e-07, 0, 1, 0, 9.685755e-08, -3.907985e-14, 0.99999934, -0.60591125, 0, 1.6545649)
+transform = Transform3D(0.99998605, 1.1102233e-16, -2.0023437e-07, 0, 1.0000002, 0, 9.685755e-08, -4.0856207e-14, 0.9999994, -0.60591125, 0, 1.6298966)
 shape = SubResource("BoxShape3D_hwiky")
 
 [node name="CollisionShape3D10" type="CollisionShape3D" parent="zastávka/StaticBody3D"]
@@ -564,6 +567,10 @@ shape = SubResource("BoxShape3D_aj1oh")
 [node name="CollisionShape3D21" type="CollisionShape3D" parent="zastávka/StaticBody3D"]
 transform = Transform3D(1.0000002, 0.0037425826, 0.000692569, -0.0016246301, 0.58432794, -0.8115236, -0.0034417599, 0.8115096, 0.58430815, 0.00500679, 0.7549728, -1.6982851)
 shape = SubResource("BoxShape3D_aj1oh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="zastávka"]
+transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, -3.1086245e-15, 1, -0.01706028, 0, 1.7485003)
+shape = SubResource("BoxShape3D_33vth")
 
 [node name="zastávka2" parent="." instance=ExtResource("12_r8ukj")]
 transform = Transform3D(-6.9539614, 4.656613e-10, -0.058516543, -0.0058197808, 6.841245, 0.31621066, 0.086344786, 0.46111143, -4.6914387, 81.73788, 15.811159, -32.23856)
@@ -755,4 +762,4 @@ offset_bottom = 3059.0
 mouse_filter = 2
 
 [node name="vlak" parent="." instance=ExtResource("19_r34np")]
-transform = Transform3D(-4.3615284e-08, 2.8969245e-09, 0.9999999, 0.0662739, 0.9978015, 0, -0.9978015, 0.066273905, -4.3711385e-08, 84.06757, 8.326498, 30.994825)
+transform = Transform3D(0.0025164112, 0.0044104545, 0.999987, -0.014906339, 0.99987936, -0.0043724743, -0.9998857, -0.014895134, 0.0025818397, 84.06757, 8.326498, 30.994825)

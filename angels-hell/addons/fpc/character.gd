@@ -17,12 +17,14 @@ class_name MainCharacter extends CharacterBody3D
 ## The speed that the character moves at when sprinting.
 @export var sprint_speed : float = 6.0
 ## The speed that the character moves at when crouching.
-@export var crouch_speed : float = 1.0
+@export var crouch_speed : float = 0.0
 
 ## How fast the character speeds up and slows down when Motion Smoothing is on.
 @export var acceleration : float = 10.0
 ## How high the player jumps.
 @export var jump_velocity : float = 4.5
+
+@export var crouch_extra_velocity : float = 0.0
 ## How far the player turns when the mouse is moved.
 @export var mouse_sensitivity : float = 0.1
 ## Invert the X axis input for the camera.
@@ -144,6 +146,8 @@ var mouseInput : Vector2 = Vector2(0,0)
 #region Main Control Flow
 
 func _ready():
+	base_speed = Global.base_speed
+	
 	#It is safe to comment this line if your game doesn't start with the mouse captured
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
@@ -188,6 +192,7 @@ func _physics_process(delta): # Most things happen here.
 		velocity.y -= gravity * delta
 
 	handle_jumping()
+	handle_crouch()
 
 	var input_dir = Vector2.ZERO
 
@@ -232,6 +237,13 @@ func handle_jumping():
 					JUMP_ANIMATION.play("jump", 0.25)
 				velocity.y += jump_velocity
 
+func handle_crouch():
+	if jumping_enabled:
+		if continuous_jumping: # Hold down the jump button
+			if Input.is_action_pressed(controls.CROUCH) and not is_on_floor():
+				if jump_animation:
+					JUMP_ANIMATION.play("jump", 0.25)
+				velocity.y -= crouch_extra_velocity # Adding instead of setting so jumping on slopes works properly
 
 func handle_movement(delta, input_dir):
 	var direction = input_dir.rotated(-HEAD.rotation.y)
@@ -501,3 +513,21 @@ func handle_pausing():
 				#get_tree().paused = false
 
 #endregion
+
+
+func _on_speedbutton_pressed() -> void:
+	base_speed += 5.0
+	%UpgradesControl.visible = false
+
+func _on_sprintspeedbutton_pressed() -> void:
+	sprint_speed += 5.0
+	%UpgradesControl.visible = false
+ 
+
+func _on_jumpbutton_pressed() -> void:
+	jump_velocity += 3.0
+	%UpgradesControl.visible = false
+
+func _on_fastfollbutton_pressed() -> void:
+	crouch_extra_velocity += 7
+	%UpgradesControl.visible = false
