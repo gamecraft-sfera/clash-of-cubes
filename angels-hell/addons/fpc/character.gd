@@ -529,5 +529,5 @@ func _on_jumpbutton_pressed() -> void:
 	%UpgradesControl.visible = false
 
 func _on_fastfollbutton_pressed() -> void:
-	crouch_extra_velocity += 7
+	crouch_extra_velocity += 7.0
 	%UpgradesControl.visible = false
