@@ -173,6 +173,12 @@ func _process(_delta):
 		handle_pausing()
 	
 	update_debug_menu_per_frame()
+	
+func damage(health_points: int) -> void:
+	health -= health_points
+	if health <= 0:
+		%DeadScreen.visible = true
+	
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("shoot"):

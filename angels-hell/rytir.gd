@@ -26,5 +26,5 @@ func _physics_process(delta: float) -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is MainCharacter:
 		var main_char: MainCharacter = body
-		main_char.health -= damage
+		main_char.damage(damage)
 		$PauseTimer.start()
