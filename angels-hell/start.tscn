@@ -89,7 +89,7 @@ transform = Transform3D(1, 0, 0, 0, 0.9977362, 0.06724906, 0, -0.06724906, 0.997
 environment = SubResource("Environment_r8ukj")
 
 [node name="main Character" parent="." instance=ExtResource("1_ots34")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 166.93745, 11.795664)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.7993367, 0.59768254)
 jump_velocity = 15.0
 in_air_momentum = false
 
@@ -289,6 +289,63 @@ transform = Transform3D(0.9977056, -0.0012210915, 0.06769286, 0.0058021783, 0.99
 [node name="sloup divny" parent="CSGBox3D6" instance=ExtResource("6_g38d0")]
 transform = Transform3D(0.9998038, -0.0012210936, 0.019781448, 0.002558343, 0.99770457, -0.06772164, -0.019652776, 0.06775885, 0.9975148, -1.4040699, 0.70875305, 3.3951712)
 
+[node name="koule4" type="CSGSphere3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19.915771, 7.332884, -8.80089)
+use_collision = true
+collision_layer = 2
+collision_mask = 0
+radius = 2.3099933
+
+[node name="koule5" type="CSGSphere3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18.806593, 0.44795758, 5.63528)
+use_collision = true
+collision_layer = 2
+collision_mask = 0
+radius = 1.4274968
+
+[node name="koule6" type="CSGSphere3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.126698, 9.618223, 16.402018)
+use_collision = true
+collision_layer = 2
+collision_mask = 0
+radius = 4.282033
+
+[node name="koule8" type="CSGSphere3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.126698, 9.618223, 16.402018)
+use_collision = true
+collision_layer = 2
+collision_mask = 0
+radius = 4.282033
+
+[node name="koule9" type="CSGSphere3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.126698, 9.618223, 16.402018)
+use_collision = true
+collision_layer = 2
+collision_mask = 0
+radius = 4.282033
+
+[node name="koule10" type="CSGSphere3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 38.361214, 9.977411, -24.156517)
+use_collision = true
+collision_layer = 2
+collision_mask = 0
+radius = 4.47618
+
+[node name="koule11" type="CSGSphere3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 17.874615, 10.736096, 22.227629)
+use_collision = true
+collision_layer = 2
+collision_mask = 0
+radius = 1.6908939
+
+[node name="koule7" type="CSGSphere3D" parent="."]
+transform = Transform3D(1.311342e-07, 0, 1, 0, 1, -8.881784e-16, -1, 0, 1.311342e-07, 57.739407, 19.045967, -10.366055)
+use_collision = true
+collision_layer = 2
+collision_mask = 0
+radius = 4.282033
+smooth_faces = false
+
 [node name="posina 1" type="CSGBox3D" parent="."]
 transform = Transform3D(-0.5882347, -0.038267214, 0.80778193, 0.04138004, 0.9961453, 0.077323824, -0.80762476, 0.07891088, -0.5843832, 34.40154, 0.22064763, 7.9321275)
 use_collision = true
@@ -353,6 +410,13 @@ size = Vector3(10.479614, 1.7387695, 5.1834984)
 transform = Transform3D(-0.88693863, -0.029024053, 0.46097302, 0.018052729, 0.99508125, 0.097387105, -0.46153438, 0.09469834, -0.8820507, 34.51815, 1.1861308, -7.356463)
 use_collision = true
 size = Vector3(10.479614, 1.7387695, 5.1834984)
+
+[node name="koule" type="CSGSphere3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.826662, -6.901658, 18.36712)
+use_collision = true
+collision_layer = 2
+collision_mask = 0
+radius = 2.3099933
 
 [node name="koule2" type="CSGSphere3D" parent="."]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 107.247025, 49.23961, 19.072565)
@@ -690,6 +754,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.571136, 8.021998, 17.91842
 player = NodePath("../main Character")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_r34np")
@@ -698,4 +763,4 @@ offset_bottom = 3059.0
 mouse_filter = 2
 
 [node name="vlak" parent="." instance=ExtResource("19_r34np")]
-transform = Transform3D(0.0016728429, 0.0038071894, 1.00053, 0.0155562535, 0.8629739, -0.004470576, -0.6645889, 0.020209506, 0.0024137862, 84.06757, 8.289684, 31.541006)
+transform = Transform3D(0.0025164115, 0.004410455, 0.999987, 0.02340084, 0.9997163, -0.004468151, -0.99972296, 0.0234118, 0.002412477, 84.06757, 8.326498, 30.994825)

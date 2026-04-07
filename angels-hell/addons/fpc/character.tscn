@@ -444,6 +444,7 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="DebugPanel" type="PanelContainer" parent="UserInterface"]
+visible = false
 layout_mode = 0
 offset_left = 10.0
 offset_top = 10.0
@@ -533,6 +534,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="UserInterface/DeadScreen"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -546,6 +548,7 @@ grow_vertical = 2
 color = Color(0.26028818, 0.009753074, 0.076289505, 1)
 
 [node name="TextureRect" type="TextureRect" parent="UserInterface/DeadScreen"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
