@@ -517,9 +517,9 @@ text = "dash"
 layout_mode = 2
 text = "fast foll"
 
-[node name="sprintspeedbutton" type="Button" parent="UserInterface/UpgradesControl/CenterContainer/HBoxContainer"]
+[node name="cambutton" type="Button" parent="UserInterface/UpgradesControl/CenterContainer/HBoxContainer"]
 layout_mode = 2
-text = "sprint speed"
+text = "batter cam"
 
 [node name="ColorRect" type="ColorRect" parent="UserInterface"]
 visible = false
@@ -564,7 +564,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_gv6je")
 
-[node name="Button2" type="Button" parent="UserInterface/DeadScreen"]
+[node name="UpdateBtn" type="Button" parent="UserInterface/DeadScreen"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -579,7 +579,7 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Update"
 
-[node name="Button" type="Button" parent="UserInterface/DeadScreen"]
+[node name="AgainButton" type="Button" parent="UserInterface/DeadScreen"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -608,4 +608,5 @@ wait_time = 0.5
 [connection signal="pressed" from="UserInterface/UpgradesControl/CenterContainer/HBoxContainer/speedbutton" to="." method="_on_speedbutton_pressed"]
 [connection signal="pressed" from="UserInterface/UpgradesControl/CenterContainer/HBoxContainer/jumpbutton" to="." method="_on_jumpbutton_pressed"]
 [connection signal="pressed" from="UserInterface/UpgradesControl/CenterContainer/HBoxContainer/fastfollbutton" to="." method="_on_fastfollbutton_pressed"]
-[connection signal="pressed" from="UserInterface/UpgradesControl/CenterContainer/HBoxContainer/sprintspeedbutton" to="." method="_on_sprintspeedbutton_pressed"]
+[connection signal="pressed" from="UserInterface/UpgradesControl/CenterContainer/HBoxContainer/cambutton" to="." method="_on_sprintspeedbutton_pressed"]
+[connection signal="pressed" from="UserInterface/DeadScreen/AgainButton" to="." method="_on_again_button_pressed"]

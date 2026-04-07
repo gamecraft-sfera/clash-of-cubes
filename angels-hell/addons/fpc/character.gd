@@ -5,6 +5,8 @@
 
 class_name MainCharacter extends CharacterBody3D
 
+@export var start_point: Node3D
+
 @export_group("Miky parametry")
 @export var health: int = 100
 
@@ -144,7 +146,6 @@ var mouseInput : Vector2 = Vector2(0,0)
 
 
 #region Main Control Flow
-
 func _ready():
 	base_speed = Global.base_speed
 	
@@ -525,9 +526,11 @@ func handle_pausing():
 
 
 func _on_speedbutton_pressed() -> void:
+	Global.base_speed += 5.0
 	base_speed += 5.0
 	%UpgradesControl.visible = false
-
+	
+	
 func _on_sprintspeedbutton_pressed() -> void:
 	sprint_speed += 5.0
 	%UpgradesControl.visible = false
@@ -540,3 +543,11 @@ func _on_jumpbutton_pressed() -> void:
 func _on_fastfollbutton_pressed() -> void:
 	crouch_extra_velocity += 7.0
 	%UpgradesControl.visible = false
+
+
+func _on_again_button_pressed() -> void:
+	global_position = start_point.global_position
+	%DeadScreen.visible = false
+	RETICLE.visible = true
+	health = 100
+	get_tree().reload_current_scene()
