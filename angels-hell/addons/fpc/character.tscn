@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://cc1m2a1obsyn4"]
+[gd_scene load_steps=26 format=3 uid="uid://cc1m2a1obsyn4"]
 
 [ext_resource type="Script" uid="uid://hutuis63hgev" path="res://addons/fpc/character.gd" id="1_0t4e8"]
 [ext_resource type="PackedScene" uid="uid://b5kqkh7wg1kn0" path="res://gun.tscn" id="2_bx7cj"]
+[ext_resource type="PackedScene" uid="uid://b811lwp060mex" path="res://muzzle/muzzle/assets/muzzle_flash/muzzle_flash_1.tscn" id="3_4fv23"]
 [ext_resource type="Script" uid="uid://dgfl3skp075ft" path="res://addons/fpc/EditorModule.gd" id="3_v3ckk"]
 [ext_resource type="Script" uid="uid://u5u7xxlvmcxx" path="res://addons/fpc/debug.gd" id="3_x1wcc"]
 [ext_resource type="FontFile" uid="uid://bctqqlkjgrxkd" path="res://Digital Gothic-Bold.otf" id="4_qaoyu"]
@@ -415,6 +416,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 [node name="Meshy_AI_pepa1_0217162417_texture2" parent="Head/Camera" instance=ExtResource("2_bx7cj")]
 transform = Transform3D(-0.11979031, 0, -0.9927992, 0, 1, 0, 0.9927992, 0, -0.11979031, 0.27240315, -0.57503045, -0.5315)
 
+[node name="MuzzleFlash_1" parent="Head/Camera/Meshy_AI_pepa1_0217162417_texture2" instance=ExtResource("3_4fv23")]
+unique_name_in_owner = true
+transform = Transform3D(-1, 0, -8.940697e-08, 0, 1, 0, 8.940697e-08, 0, -1, -1.0068351, 0.103936434, 0.009506717)
+
 [node name="HeadbobAnimation" type="AnimationPlayer" parent="Head"]
 libraries = {
 &"": SubResource("AnimationLibrary_o0unb")
@@ -486,9 +491,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 1.0
-offset_top = 1.0
+offset_top = -3.0
 offset_right = 1.0
-offset_bottom = 1.0
+offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -519,8 +524,9 @@ text = "sprint speed"
 [node name="ColorRect" type="ColorRect" parent="UserInterface"]
 visible = false
 layout_mode = 0
-offset_right = 1155.0
-offset_bottom = 646.0
+offset_left = 1.0
+offset_right = 2113.0
+offset_bottom = 1147.0
 color = Color(1, 0.65882355, 0.41960785, 0.27058825)
 
 [node name="DeadScreen" type="Control" parent="UserInterface"]
@@ -534,7 +540,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="UserInterface/DeadScreen"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -548,11 +553,13 @@ grow_vertical = 2
 color = Color(0.26028818, 0.009753074, 0.076289505, 1)
 
 [node name="TextureRect" type="TextureRect" parent="UserInterface/DeadScreen"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -11.0
+offset_right = 15.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_gv6je")

@@ -89,7 +89,7 @@ transform = Transform3D(1, 0, 0, 0, 0.9977362, 0.06724906, 0, -0.06724906, 0.997
 environment = SubResource("Environment_r8ukj")
 
 [node name="main Character" parent="." instance=ExtResource("1_ots34")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.7993367, 0.59768254)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.7751024, 0.6324437, 0.8324037)
 jump_velocity = 15.0
 in_air_momentum = false
 
@@ -102,9 +102,9 @@ shadow_normal_bias = 10.0
 shadow_opacity = 0.75
 
 [node name="start block" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.99886894, -0.047507033, 0, 0.047507033, 0.99886894, -0.30486298, -0.06484536, 0.6440809)
+transform = Transform3D(1, 0, 0, 0, 0.9988689, -0.047507036, 0, 0.047507036, 0.9988689, -1.471095, -0.044565734, 0.453261)
 use_collision = true
-size = Vector3(9.951263, 1, 10.762268)
+size = Vector3(12.311302, 1, 15.492287)
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="start block"]
 transform = Transform3D(1.8398763, 0, 0, 0, 0.98652375, -1.8626451e-08, 0, 1.3038516e-08, 1.637165, 0, 0.57444525, -0.22783193)

@@ -187,6 +187,7 @@ func _input(event: InputEvent) -> void:
 		shoot()
 		
 func shoot():
+	%MuzzleFlash_1.muzzle_flash()
 	if %RayCast3D.is_colliding():
 		var collider : Node3D = %RayCast3D.get_collider()
 		if collider:
