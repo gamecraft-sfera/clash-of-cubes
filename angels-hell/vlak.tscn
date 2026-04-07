@@ -11,6 +11,8 @@ data = PackedVector3Array(-8.1624, 12.538199, 12.8557, -8.2098, 12.4276, 14.4080
 transform = Transform3D(0.41806477, 0, 0, 0, 0.41806477, 0, 0, 0, 0.41806477, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+collision_layer = 5
+collision_mask = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(0.41806477, 0, 0, 0, 0.41806477, 0, 0, 0, 0.41806477, 0, 0, 0)
