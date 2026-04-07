@@ -88,14 +88,12 @@ transform = Transform3D(1, 0, 0, 0, 0.9977362, 0.06724906, 0, -0.06724906, 0.997
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_r8ukj")
 
-
 [node name="StartPoint" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.7993367, 0.59768254)
 
 [node name="main Character" parent="." node_paths=PackedStringArray("start_point") instance=ExtResource("1_ots34")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.7993367, 0.59768254)
 start_point = NodePath("../StartPoint")
-
 jump_velocity = 15.0
 in_air_momentum = false
 

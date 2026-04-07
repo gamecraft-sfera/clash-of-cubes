@@ -148,6 +148,7 @@ var mouseInput : Vector2 = Vector2(0,0)
 #region Main Control Flow
 func _ready():
 	base_speed = Global.base_speed
+	health = Global.maxhealth
 	
 	#It is safe to comment this line if your game doesn't start with the mouse captured
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -545,9 +546,16 @@ func _on_fastfollbutton_pressed() -> void:
 	%UpgradesControl.visible = false
 
 
+
 func _on_again_button_pressed() -> void:
 	global_position = start_point.global_position
 	%DeadScreen.visible = false
 	RETICLE.visible = true
 	health = 100
 	get_tree().reload_current_scene()
+
+
+func _on_healthbutton_pressed() -> void:
+	Global.maxhealth += 20
+	health +=20
+	%UpgradesControl.visible = false

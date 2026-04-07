@@ -521,6 +521,10 @@ text = "fast foll"
 layout_mode = 2
 text = "batter cam"
 
+[node name="healthbutton" type="Button" parent="UserInterface/UpgradesControl/CenterContainer/HBoxContainer"]
+layout_mode = 2
+text = "health"
+
 [node name="ColorRect" type="ColorRect" parent="UserInterface"]
 visible = false
 layout_mode = 0
@@ -609,4 +613,5 @@ wait_time = 0.5
 [connection signal="pressed" from="UserInterface/UpgradesControl/CenterContainer/HBoxContainer/jumpbutton" to="." method="_on_jumpbutton_pressed"]
 [connection signal="pressed" from="UserInterface/UpgradesControl/CenterContainer/HBoxContainer/fastfollbutton" to="." method="_on_fastfollbutton_pressed"]
 [connection signal="pressed" from="UserInterface/UpgradesControl/CenterContainer/HBoxContainer/cambutton" to="." method="_on_sprintspeedbutton_pressed"]
+[connection signal="pressed" from="UserInterface/UpgradesControl/CenterContainer/HBoxContainer/healthbutton" to="." method="_on_healthbutton_pressed"]
 [connection signal="pressed" from="UserInterface/DeadScreen/AgainButton" to="." method="_on_again_button_pressed"]
