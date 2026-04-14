@@ -570,5 +570,5 @@ func _on_healthbutton_pressed() -> void:
  
 
 func _on_dashbutton_pressed() -> void:
-	Global.sprint_speed += 10
+	Global.sprint_speeds += 10
 	%UpgradesControl.visible = false

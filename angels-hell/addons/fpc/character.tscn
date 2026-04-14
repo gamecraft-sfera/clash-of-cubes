@@ -1,10 +1,10 @@
 [gd_scene load_steps=26 format=3 uid="uid://cc1m2a1obsyn4"]
 
 [ext_resource type="Script" uid="uid://hutuis63hgev" path="res://addons/fpc/character.gd" id="1_0t4e8"]
-[ext_resource type="PackedScene" uid="uid://b5kqkh7wg1kn0" path="res://gun.tscn" id="2_bx7cj"]
 [ext_resource type="PackedScene" uid="uid://b811lwp060mex" path="res://muzzle/muzzle/assets/muzzle_flash/muzzle_flash_1.tscn" id="3_4fv23"]
 [ext_resource type="Script" uid="uid://dgfl3skp075ft" path="res://addons/fpc/EditorModule.gd" id="3_v3ckk"]
 [ext_resource type="Script" uid="uid://u5u7xxlvmcxx" path="res://addons/fpc/debug.gd" id="3_x1wcc"]
+[ext_resource type="PackedScene" uid="uid://dbqi5fwjbpumb" path="res://gun/pepa.gltf" id="4_4fv23"]
 [ext_resource type="FontFile" uid="uid://bctqqlkjgrxkd" path="res://Digital Gothic-Bold.otf" id="4_qaoyu"]
 [ext_resource type="Texture2D" uid="uid://duecy0mj0n38i" path="res://sistem ofline.png" id="5_gv6je"]
 
@@ -413,13 +413,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera" type="Camera3D" parent="Head"]
 
-[node name="Meshy_AI_pepa1_0217162417_texture2" parent="Head/Camera" instance=ExtResource("2_bx7cj")]
-transform = Transform3D(-0.11979031, 0, -0.9927992, 0, 1, 0, 0.9927992, 0, -0.11979031, 0.27240315, -0.57503045, -0.5315)
-
-[node name="MuzzleFlash_1" parent="Head/Camera/Meshy_AI_pepa1_0217162417_texture2" instance=ExtResource("3_4fv23")]
-unique_name_in_owner = true
-transform = Transform3D(-1, 0, -8.940697e-08, 0, 1, 0, 8.940697e-08, 0, -1, -1.0068351, 0.103936434, 0.009506717)
-
 [node name="HeadbobAnimation" type="AnimationPlayer" parent="Head"]
 libraries = {
 &"": SubResource("AnimationLibrary_o0unb")
@@ -438,6 +431,13 @@ target_position = Vector3(0, -1, -100)
 collision_mask = 2
 collide_with_areas = true
 debug_shape_thickness = 5
+
+[node name="pepa" parent="Head" instance=ExtResource("4_4fv23")]
+transform = Transform3D(-0.025723351, 0, -0.9996691, 0, 1, 0, 0.9996691, 0, -0.025723351, 0.3617116, -0.5407629, -0.8967588)
+
+[node name="MuzzleFlash_1" parent="Head/pepa" instance=ExtResource("3_4fv23")]
+unique_name_in_owner = true
+transform = Transform3D(-0.99938077, 0, -0.03519602, 0, 1, 0, 0.03519602, 0, -0.99938077, -1.1278578, 0.032267928, 0.009868383)
 
 [node name="UserInterface" type="Control" parent="."]
 layout_mode = 3
