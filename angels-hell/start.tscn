@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cxen2x3qhr0vy"]
+[gd_scene load_steps=41 format=3 uid="uid://cxen2x3qhr0vy"]
 
 [ext_resource type="Script" uid="uid://chpv71n0u4s31" path="res://start.gd" id="1_aj1oh"]
 [ext_resource type="Texture2D" uid="uid://ddscp3b6mfe7o" path="res://AllSkyFree_Sky_EpicBlueSunset_Equirect.png" id="1_gophc"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bjrw0xgd1b8gp" path="res://sip.tscn" id="17_3iev3"]
 [ext_resource type="Shader" uid="uid://bugeewnpc4ha2" path="res://shader.gdshader" id="18_wvlwx"]
 [ext_resource type="PackedScene" uid="uid://cgqnipqlrf15c" path="res://vlak.tscn" id="19_r34np"]
+[ext_resource type="PackedScene" uid="uid://dbr3fudj527x4" path="res://Sign.glb" id="21_33vth"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_p0nl4"]
 panorama = ExtResource("1_gophc")
@@ -86,6 +87,9 @@ shader_parameter/opacity = 0.5
 [sub_resource type="BoxShape3D" id="BoxShape3D_oxms4"]
 size = Vector3(426.9633, 1, 442.99503)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ywbk"]
+size = Vector3(28.035294, 1, 5.5131836)
+
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 0.9977362, 0.06724906, 0, -0.06724906, 0.9977362, 0, 0, 0)
 script = ExtResource("1_aj1oh")
@@ -97,7 +101,7 @@ environment = SubResource("Environment_r8ukj")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.7993367, 0.59768254)
 
 [node name="main Character" parent="." node_paths=PackedStringArray("start_point") instance=ExtResource("1_ots34")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.7993367, 0.59768254)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.5010151, 0.7993367, 0.59768254)
 start_point = NodePath("../StartPoint")
 jump_velocity = 15.0
 in_air_momentum = false
@@ -569,10 +573,6 @@ shape = SubResource("BoxShape3D_hwiky")
 transform = Transform3D(0.9999693, 2.220446e-16, -3.9767474e-07, 0, 1, 0, 1.937151e-07, -9.947598e-14, 0.99999833, 1.6368809, 0, -1.6521602)
 shape = SubResource("BoxShape3D_hwiky")
 
-[node name="CollisionShape3D16" type="CollisionShape3D" parent="zastávka2/StaticBody3D"]
-transform = Transform3D(-0.044155248, -0.99886787, -0.017501771, 0.7836007, -0.045497797, 0.61956507, -0.6196298, 0.013643146, 0.784732, 1.4018698, 0.94871855, 12.188343)
-shape = SubResource("BoxShape3D_hwiky")
-
 [node name="CollisionShape3D17" type="CollisionShape3D" parent="zastávka2/StaticBody3D"]
 transform = Transform3D(0.99994504, 0.0039250865, -0.009710653, -0.010006138, 0.631937, -0.7749556, 0.003094892, 0.77501005, 0.63191986, -0.12999249, 0.75999904, -1.6992526)
 shape = SubResource("BoxShape3D_aj1oh")
@@ -701,3 +701,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 48.572567, 3.2738707)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="mrtvazona"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.740738, -64.87804, -28.355045)
 shape = SubResource("BoxShape3D_oxms4")
+
+[node name="Root Scene15" parent="." instance=ExtResource("21_33vth")]
+transform = Transform3D(0.7669413, -0.016081935, 0.64151573, -0.3325532, 0.8450162, 0.41875553, -0.54882556, -0.53449893, 0.64272994, 75.064095, 18.816566, 25.017033)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, -2.9802322e-08, 2.9802322e-08, 0, 0.62965935, -0.77687114, 0, 0.7768712, 0.62965953, 82.082, 21.254364, -23.212276)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 2.8865799e-15, -2.4424907e-15, 0, 1, -2.9802322e-08, 0, 2.9802322e-08, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_0ywbk")
+
+[node name="Root Scene16" parent="." instance=ExtResource("21_33vth")]
+transform = Transform3D(0.75697225, 0, -0.65344703, -0.0439437, 0.9977362, -0.050905664, 0.65196776, 0.06724905, 0.7552582, 69.2372, 22.483194, -24.646187)
