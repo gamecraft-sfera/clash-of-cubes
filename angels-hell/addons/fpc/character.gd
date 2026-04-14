@@ -124,6 +124,8 @@ class_name MainCharacter extends CharacterBody3D
 
 #region Member Variable Initialization
 
+var god_mode: bool = false
+
 # These are variables used in this script that don't need to be exposed in the editor.
 var speed : float = base_speed
 var current_speed : float = 0.0
@@ -147,6 +149,7 @@ var mouseInput : Vector2 = Vector2(0,0)
 
 #region Main Control Flow
 func _ready():
+	god_mode = true
 	base_speed = Global.base_speed
 	health = Global.maxhealth
 	
@@ -177,6 +180,9 @@ func _process(_delta):
 	update_debug_menu_per_frame()
 	
 func damage(health_points: int) -> void:
+	if god_mode:
+		return
+		
 	health -= health_points
 	if health <= 0:
 		death()
@@ -537,26 +543,31 @@ func _on_speedbutton_pressed() -> void:
 	Global.base_speed += 5.0
 	base_speed += 5.0
 	%UpgradesControl.visible = false
+	god_mode = false
 	
 	
 func _on_sprintspeedbutton_pressed() -> void:
 	sprint_speed += 5.0
 	%UpgradesControl.visible = false
+	god_mode = false
  
 
 func _on_jumpbutton_pressed() -> void:
 	jump_velocity += 3.0
 	%UpgradesControl.visible = false
+	god_mode = false
 
 func _on_fastfollbutton_pressed() -> void:
 	crouch_extra_velocity += 7.0
 	%UpgradesControl.visible = false
+	god_mode = false
 
 
 
 func _on_again_button_pressed() -> void:
 	global_position = start_point.global_position
 	%DeadScreen.visible = false
+	god_mode = false
 	RETICLE.visible = true
 	health = 100
 	get_tree().reload_current_scene()
@@ -566,9 +577,11 @@ func _on_healthbutton_pressed() -> void:
 	Global.maxhealth += 20
 	health +=20
 	%UpgradesControl.visible = false
+	god_mode = false
  
  
 
 func _on_dashbutton_pressed() -> void:
 	Global.sprint_speeds += 10
 	%UpgradesControl.visible = false
+	god_mode = false
