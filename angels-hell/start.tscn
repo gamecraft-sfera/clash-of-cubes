@@ -1,5 +1,6 @@
-[gd_scene load_steps=37 format=3 uid="uid://cxen2x3qhr0vy"]
+[gd_scene load_steps=39 format=3 uid="uid://cxen2x3qhr0vy"]
 
+[ext_resource type="Script" uid="uid://chpv71n0u4s31" path="res://start.gd" id="1_aj1oh"]
 [ext_resource type="Texture2D" uid="uid://ddscp3b6mfe7o" path="res://AllSkyFree_Sky_EpicBlueSunset_Equirect.png" id="1_gophc"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ots34"]
 [ext_resource type="PackedScene" uid="uid://bvuo8bqt0xajj" path="res://Grave.glb" id="2_1n0d2"]
@@ -82,8 +83,12 @@ shader_parameter/vhs_intensity = 3.0
 shader_parameter/noise_intensity = 0.15
 shader_parameter/opacity = 0.5
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_oxms4"]
+size = Vector3(426.9633, 1, 442.99503)
+
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 0.9977362, 0.06724906, 0, -0.06724906, 0.9977362, 0, 0, 0)
+script = ExtResource("1_aj1oh")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_r8ukj")
@@ -689,3 +694,10 @@ mouse_filter = 2
 
 [node name="vlak" parent="." instance=ExtResource("19_r34np")]
 transform = Transform3D(0.0025164115, 0.004410455, 0.999987, 0.02340084, 0.9997163, -0.004468151, -0.99972296, 0.0234118, 0.002412477, 84.06757, 8.326498, 30.994825)
+
+[node name="mrtvazona" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 48.572567, 3.2738707)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mrtvazona"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.740738, -64.87804, -28.355045)
+shape = SubResource("BoxShape3D_oxms4")

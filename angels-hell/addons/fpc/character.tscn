@@ -611,6 +611,7 @@ wait_time = 0.5
 
 [connection signal="pressed" from="UserInterface/UpgradesControl/CenterContainer/HBoxContainer/speedbutton" to="." method="_on_speedbutton_pressed"]
 [connection signal="pressed" from="UserInterface/UpgradesControl/CenterContainer/HBoxContainer/jumpbutton" to="." method="_on_jumpbutton_pressed"]
+[connection signal="pressed" from="UserInterface/UpgradesControl/CenterContainer/HBoxContainer/dashbutton" to="." method="_on_dashbutton_pressed"]
 [connection signal="pressed" from="UserInterface/UpgradesControl/CenterContainer/HBoxContainer/fastfollbutton" to="." method="_on_fastfollbutton_pressed"]
 [connection signal="pressed" from="UserInterface/UpgradesControl/CenterContainer/HBoxContainer/cambutton" to="." method="_on_sprintspeedbutton_pressed"]
 [connection signal="pressed" from="UserInterface/UpgradesControl/CenterContainer/HBoxContainer/healthbutton" to="." method="_on_healthbutton_pressed"]

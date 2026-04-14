@@ -179,9 +179,12 @@ func _process(_delta):
 func damage(health_points: int) -> void:
 	health -= health_points
 	if health <= 0:
-		RETICLE.visible = false
-		%DeadScreen.visible = true
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		death()
+		
+func death():
+	RETICLE.visible = false
+	%DeadScreen.visible = true
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 
 func _input(event: InputEvent) -> void:
@@ -196,6 +199,10 @@ func shoot():
 			collider.queue_free()
 			
 func _physics_process(delta): # Most things happen here.
+	if global_position.y < -20:
+		health = 0
+		death()
+	
 	# Gravity
 	if dynamic_gravity:
 		gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -558,4 +565,10 @@ func _on_again_button_pressed() -> void:
 func _on_healthbutton_pressed() -> void:
 	Global.maxhealth += 20
 	health +=20
+	%UpgradesControl.visible = false
+ 
+ 
+
+func _on_dashbutton_pressed() -> void:
+	Global.sprint_speed += 10
 	%UpgradesControl.visible = false
