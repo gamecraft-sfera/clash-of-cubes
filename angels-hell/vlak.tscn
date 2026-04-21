@@ -17,3 +17,8 @@ collision_mask = 5
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(0.41806477, 0, 0, 0, 0.41806477, 0, 0, 0, 0.41806477, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_nmw5d")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6667085, 0, -0.09696245)
+use_collision = true
+size = Vector3(1.3920898, 1, 2.0234375)

@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://dsajyrubi2tu2"]
+
+[ext_resource type="PackedScene" uid="uid://cgqnipqlrf15c" path="res://vlak.tscn" id="1_77vp4"]
+[ext_resource type="Texture2D" uid="uid://cpd7gj1k4dbvk" path="res://addons/AllSkyFree_Sky_OvercastLow_Equirect.png" id="1_lcfo0"]
+[ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_lcfo0"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_w330c"]
+panorama = ExtResource("1_lcfo0")
+
+[sub_resource type="Sky" id="Sky_lcfo0"]
+sky_material = SubResource("PanoramaSkyMaterial_w330c")
+
+[sub_resource type="Environment" id="Environment_w330c"]
+background_mode = 2
+sky = SubResource("Sky_lcfo0")
+tonemap_mode = 2
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_w330c")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 53.45147, 0)
+radius = 6.1239996
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 44.267242, 0)
+light_energy = 5.9
+
+[node name="vlak" parent="." instance=ExtResource("1_77vp4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19332099, 1.1920929e-07, 1.4026034)
+
+[node name="vlak2" parent="." instance=ExtResource("1_77vp4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19332099, 1.1920929e-07, -17.026987)
+
+[node name="vlak5" parent="." instance=ExtResource("1_77vp4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19332099, 1.1920929e-07, -35.34713)
+
+[node name="vlak3" parent="." instance=ExtResource("1_77vp4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19332099, 1.1920929e-07, 37.787693)
+
+[node name="vlak4" parent="." instance=ExtResource("1_77vp4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19332099, 1.1920929e-07, 19.497585)
+
+[node name="Character" parent="." instance=ExtResource("2_lcfo0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.16450632, 5.3656945, 20.363651)
