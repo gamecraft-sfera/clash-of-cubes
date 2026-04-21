@@ -43,5 +43,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19332099, 1.1920929e-07, 37
 [node name="vlak4" parent="." instance=ExtResource("1_77vp4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19332099, 1.1920929e-07, 19.497585)
 
-[node name="Character" parent="." instance=ExtResource("2_lcfo0")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.16450632, 5.3656945, 20.363651)
+[node name="Character" parent="." node_paths=PackedStringArray("start_point") instance=ExtResource("2_lcfo0")]
+transform = Transform3D(-0.9994479, 0, -0.033224937, 0, 1, 0, 0.033224937, 0, -0.9994479, 0.02194202, 0.9686599, 3.1834793)
+start_point = NodePath(".")
