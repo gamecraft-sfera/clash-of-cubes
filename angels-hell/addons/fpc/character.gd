@@ -202,7 +202,12 @@ func shoot():
 	if %RayCast3D.is_colliding():
 		var collider : Node3D = %RayCast3D.get_collider()
 		if collider:
+			var mrtvola : Node3D = load("uid://br6auogeb7pym").instantiate()
+			get_parent().add_child(mrtvola)
+			mrtvola.global_position = collider.global_position
+			mrtvola.rotation = collider.rotation
 			collider.queue_free()
+			
 			
 func _physics_process(delta): # Most things happen here.
 	if global_position.y < -20:
@@ -243,6 +248,14 @@ func _physics_process(delta): # Most things happen here.
 	update_debug_menu_per_tick()
 
 	was_on_floor = is_on_floor() # This must always be at the end of physics_process
+	
+	for i in range(get_slide_collision_count()):
+		var collision = get_slide_collision(i)
+		var obj = collision.get_collider()
+
+		if obj != null and obj.is_in_group("mrtvola"):
+			print("Dotýkám se:", obj.name)
+			obj.queue_free()
 
 #endregion
 
