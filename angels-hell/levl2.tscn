@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dsajyrubi2tu2"]
+[gd_scene load_steps=11 format=3 uid="uid://dsajyrubi2tu2"]
 
-[ext_resource type="PackedScene" uid="uid://cgqnipqlrf15c" path="res://vlak.tscn" id="1_77vp4"]
 [ext_resource type="Texture2D" uid="uid://cpd7gj1k4dbvk" path="res://addons/AllSkyFree_Sky_OvercastLow_Equirect.png" id="1_lcfo0"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_lcfo0"]
+[ext_resource type="PackedScene" uid="uid://cknf6iyt1pu8u" path="res://vlak_4.tscn" id="3_lcfo0"]
+[ext_resource type="Shader" uid="uid://bugeewnpc4ha2" path="res://shader.gdshader" id="4_w330c"]
+[ext_resource type="PackedScene" uid="uid://b5urdy54ssmki" path="res://lucisnik2.tscn" id="5_2scgi"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_w330c"]
 panorama = ExtResource("1_lcfo0")
@@ -13,7 +15,19 @@ sky_material = SubResource("PanoramaSkyMaterial_w330c")
 [sub_resource type="Environment" id="Environment_w330c"]
 background_mode = 2
 sky = SubResource("Sky_lcfo0")
+ambient_light_sky_contribution = 0.26
+ambient_light_energy = 0.22
 tonemap_mode = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2scgi"]
+shader = ExtResource("4_w330c")
+shader_parameter/pixel_size = 3.0
+shader_parameter/vhs_intensity = 3.0
+shader_parameter/noise_intensity = 0.15
+shader_parameter/opacity = 0.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2scgi"]
+size = Vector3(15.4662, 8.700562, 133.1387)
 
 [node name="Node3D" type="Node3D"]
 
@@ -25,24 +39,68 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 53.45147, 0)
 radius = 6.1239996
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 44.267242, 0)
-light_energy = 5.9
-
-[node name="vlak" parent="." instance=ExtResource("1_77vp4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19332099, 1.1920929e-07, 1.4026034)
-
-[node name="vlak2" parent="." instance=ExtResource("1_77vp4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19332099, 1.1920929e-07, -17.026987)
-
-[node name="vlak5" parent="." instance=ExtResource("1_77vp4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19332099, 1.1920929e-07, -35.34713)
-
-[node name="vlak3" parent="." instance=ExtResource("1_77vp4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19332099, 1.1920929e-07, 37.787693)
-
-[node name="vlak4" parent="." instance=ExtResource("1_77vp4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19332099, 1.1920929e-07, 19.497585)
+transform = Transform3D(0.9999738, 2.0605632e-05, 0.0072430237, -0.007243053, 0.0028448077, 0.9999697, 0, -0.99999595, 0.0028448822, 0, 44.267242, 0)
+light_indirect_energy = 0.0
 
 [node name="Character" parent="." node_paths=PackedStringArray("start_point") instance=ExtResource("2_lcfo0")]
-transform = Transform3D(-0.9994479, 0, -0.033224937, 0, 1, 0, 0.033224937, 0, -0.9994479, 0.02194202, 0.9686599, 3.1834793)
+transform = Transform3D(-0.9994479, 0, -0.033224937, 0, 1, 0, 0.033224937, 0, -0.9994479, 0.02194202, -0.97709763, 3.1834793)
 start_point = NodePath(".")
+
+[node name="vlak4" parent="." instance=ExtResource("3_lcfo0")]
+transform = Transform3D(0.57001376, 0, 0, 0, 0.37983334, 0, 0, 0, 0.58830285, -0.7261505, -2.2551553, 3.1044388)
+
+[node name="vlak5" parent="." instance=ExtResource("3_lcfo0")]
+transform = Transform3D(0.57001376, 0, 0, 0, 0.37983334, 0, 0, 0, 0.58830285, -0.7261505, -2.2551553, -24.440533)
+
+[node name="vlak6" parent="." instance=ExtResource("3_lcfo0")]
+transform = Transform3D(0.57001376, 0, 0, 0, 0.37983334, 0, 0, 0, 0.58830285, -0.7261505, -2.2551553, -51.45326)
+
+[node name="vlak7" parent="." instance=ExtResource("3_lcfo0")]
+transform = Transform3D(0.57001376, 0, 0, 0, 0.37983334, 0, 0, 0, 0.58830285, -0.7261505, -2.2551553, 57.297382)
+
+[node name="vlak8" parent="." instance=ExtResource("3_lcfo0")]
+transform = Transform3D(0.57001376, 0, 0, 0, 0.37983334, 0, 0, 0, 0.58830285, -0.7261505, -2.2551553, 30.306778)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_2scgi")
+offset_right = 4950.0
+offset_bottom = 3059.0
+mouse_filter = 2
+
+[node name="lucisnik2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_2scgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2763857, 3.537315, 5.259721)
+collision_layer = 1
+collision_mask = 1
+player = NodePath("../Character")
+
+[node name="lucisnik3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_2scgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015614927, 3.537315, 27.547985)
+collision_layer = 1
+collision_mask = 1
+player = NodePath("../Character")
+
+[node name="lucisnik4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_2scgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4282435, 3.537314, -24.10644)
+collision_layer = 1
+collision_mask = 1
+player = NodePath("../Character")
+
+[node name="lucisnik5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_2scgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4483614, 3.537315, -51.74015)
+collision_layer = 1
+collision_mask = 1
+player = NodePath("../Character")
+
+[node name="lucisnik6" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_2scgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1656246, 3.537315, 56.521084)
+collision_layer = 1
+collision_mask = 1
+player = NodePath("../Character")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.99985933, 7.331199e-10, 0.016771829, -7.331199e-10, 1, -6.148748e-12, -0.016771829, -6.148748e-12, 0.99985933, -0.7070358, -1.614563, 1.6987847)
+shape = SubResource("BoxShape3D_2scgi")

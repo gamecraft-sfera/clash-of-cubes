@@ -24,7 +24,7 @@ class_name MainCharacter extends CharacterBody3D
 ## How fast the character speeds up and slows down when Motion Smoothing is on.
 @export var acceleration : float = 10.0
 ## How high the player jumps.
-@export var jump_velocity : float = 4.5
+@export var jump_velocity : float = 15
 
 @export var crouch_extra_velocity : float = 0.0
 ## How far the player turns when the mouse is moved.
@@ -94,7 +94,7 @@ class_name MainCharacter extends CharacterBody3D
 ## Enable or disable jumping. Useful for restrictive storytelling environments.
 @export var jumping_enabled : bool = true
 ## Whether the player can move in the air or not.
-@export var in_air_momentum : bool = true
+@export var in_air_momentum : bool = false
 ## Smooths the feel of walking.
 @export var motion_smoothing : bool = true
 ## Enables or disables sprinting.
