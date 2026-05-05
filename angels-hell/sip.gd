@@ -12,3 +12,8 @@ func _physics_process(delta: float) -> void:
 	
 	if global_position.distance_to(target_position) <= 0.1:
 		queue_free()
+
+
+func _on_body_entered(body: Node3D) -> void:
+	if not body.is_in_group("player"):
+		queue_free()

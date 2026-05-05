@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5urdy54ssmki"]
+
+[ext_resource type="Script" uid="uid://d2extbt1c3lko" path="res://lucisnik.gd" id="1_31wbb"]
+[ext_resource type="PackedScene" uid="uid://f1kruv4bwf7o" path="res://addons/fps-hands/kanon.glb" id="2_31wbb"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3iev3"]
+radius = 0.60302734
+height = 1.9726563
+
+[node name="lucisnik2" type="CharacterBody3D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_31wbb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09570885, 1.3113022e-06)
+shape = SubResource("CapsuleShape3D_3iev3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="kanon" parent="." instance=ExtResource("2_31wbb")]
+transform = Transform3D(-0.3056683, 0, 0.0016517497, 0, 0.34884426, 0, -0.0015844957, 0, -0.31864256, 0.08526933, -0.9174617, -0.028667867)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -411,8 +411,6 @@ libraries = {
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
-[node name="Camera" type="Camera3D" parent="Head"]
-
 [node name="HeadbobAnimation" type="AnimationPlayer" parent="Head"]
 libraries = {
 &"": SubResource("AnimationLibrary_o0unb")
@@ -432,10 +430,12 @@ collision_mask = 2
 collide_with_areas = true
 debug_shape_thickness = 5
 
-[node name="pepa" parent="Head" instance=ExtResource("4_4fv23")]
+[node name="Camera" type="Camera3D" parent="Head"]
+
+[node name="pepa" parent="Head/Camera" instance=ExtResource("4_4fv23")]
 transform = Transform3D(-0.025723351, 0, -0.9996691, 0, 1, 0, 0.9996691, 0, -0.025723351, 0.3617116, -0.5407629, -0.8967588)
 
-[node name="MuzzleFlash_1" parent="Head/pepa" instance=ExtResource("3_4fv23")]
+[node name="MuzzleFlash_1" parent="Head/Camera/pepa" instance=ExtResource("3_4fv23")]
 unique_name_in_owner = true
 transform = Transform3D(-0.99938077, 0, -0.03519602, 0, 1, 0, 0.03519602, 0, -0.99938077, -1.1278578, 0.032267928, 0.009868383)
 
