@@ -7,3 +7,5 @@ var sprint_speeds : float = 8.0
 var enemies: Array = [] 
 
 var maxhealth: int = 100
+
+var blood_points: int = 0

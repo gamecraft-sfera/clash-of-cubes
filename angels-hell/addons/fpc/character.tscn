@@ -476,6 +476,20 @@ theme_override_fonts/font = ExtResource("4_qaoyu")
 theme_override_font_sizes/font_size = 67
 text = "100"
 
+[node name="points" type="Label" parent="UserInterface"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -131.0
+offset_bottom = 90.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.2992598, 0.00021562577, 0.94435865, 1)
+theme_override_fonts/font = ExtResource("4_qaoyu")
+theme_override_font_sizes/font_size = 67
+text = "0 "
+
 [node name="UpgradesControl" type="Control" parent="UserInterface"]
 unique_name_in_owner = true
 layout_mode = 1
