@@ -173,6 +173,7 @@ func _ready():
 
 func _process(_delta):
 	%hp.text = str(health)
+	%points.text = str(Global.blood_points)
 	
 	if pausing_enabled:
 		handle_pausing()
@@ -255,6 +256,7 @@ func _physics_process(delta): # Most things happen here.
 
 		if obj != null and obj.is_in_group("mrtvola"):
 			print("Dotýkám se:", obj.name)
+			Global.blood_points += 1
 			obj.queue_free()
 
 #endregion
@@ -551,8 +553,12 @@ func handle_pausing():
 
 #endregion
 
-
+var cena_updatu: int = 15
 func _on_speedbutton_pressed() -> void:
+	if Global.blood_points < cena_updatu:
+		return
+		
+	Global.blood_points -= cena_updatu
 	Global.base_speed += 5.0
 	base_speed += 5.0
 	%UpgradesControl.visible = false
@@ -560,17 +566,30 @@ func _on_speedbutton_pressed() -> void:
 	
 	
 func _on_sprintspeedbutton_pressed() -> void:
+	if Global.blood_points < cena_updatu:
+		return
+		
+	Global.blood_points -= cena_updatu
 	sprint_speed += 5.0
 	%UpgradesControl.visible = false
 	god_mode = false
  
 
 func _on_jumpbutton_pressed() -> void:
+	if Global.blood_points < cena_updatu:
+		return
+		
+	Global.blood_points -= cena_updatu
 	jump_velocity += 6.70
+
 	%UpgradesControl.visible = false
 	god_mode = false
 
 func _on_fastfollbutton_pressed() -> void:
+	if Global.blood_points < cena_updatu:
+		return
+		
+	Global.blood_points -= cena_updatu
 	crouch_extra_velocity += 7.0
 	%UpgradesControl.visible = false
 	god_mode = false
@@ -587,6 +606,10 @@ func _on_again_button_pressed() -> void:
 
 
 func _on_healthbutton_pressed() -> void:
+	if Global.blood_points < cena_updatu:
+		return
+		
+	Global.blood_points -= cena_updatu
 	Global.maxhealth += 20
 	health +=20
 	%UpgradesControl.visible = false
@@ -595,6 +618,10 @@ func _on_healthbutton_pressed() -> void:
  
 
 func _on_dashbutton_pressed() -> void:
+	if Global.blood_points < cena_updatu:
+		return
+		
+	Global.blood_points -= cena_updatu
 	Global.sprint_speeds += 10
 	%UpgradesControl.visible = false
 	god_mode = false
