@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-var gravity = -5.0
+var gravity = -0.8
 
 func _physics_process(delta):
 	if not is_on_floor():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cxen2x3qhr0vy"]
+[gd_scene load_steps=41 format=3 uid="uid://cxen2x3qhr0vy"]
 
 [ext_resource type="Script" uid="uid://chpv71n0u4s31" path="res://start.gd" id="1_aj1oh"]
 [ext_resource type="Texture2D" uid="uid://ddscp3b6mfe7o" path="res://AllSkyFree_Sky_EpicBlueSunset_Equirect.png" id="1_gophc"]
@@ -19,7 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://d4jhhdlowduop" path="res://lucisnik.tscn" id="16_3iev3"]
 [ext_resource type="PackedScene" uid="uid://bjrw0xgd1b8gp" path="res://sip.tscn" id="17_3iev3"]
 [ext_resource type="Shader" uid="uid://bugeewnpc4ha2" path="res://shader.gdshader" id="18_wvlwx"]
-[ext_resource type="PackedScene" uid="uid://cgqnipqlrf15c" path="res://vlak.tscn" id="19_r34np"]
 [ext_resource type="PackedScene" uid="uid://dbr3fudj527x4" path="res://Sign.glb" id="21_33vth"]
 [ext_resource type="PackedScene" uid="uid://br6auogeb7pym" path="res://mrtvola_body.tscn" id="22_oxms4"]
 
@@ -690,9 +689,6 @@ material = SubResource("ShaderMaterial_r34np")
 offset_right = 4950.0
 offset_bottom = 3059.0
 mouse_filter = 2
-
-[node name="vlak" parent="." instance=ExtResource("19_r34np")]
-transform = Transform3D(0.0025164115, 0.004410455, 0.999987, 0.02340084, 0.9997163, -0.004468151, -0.99972296, 0.0234118, 0.002412477, 84.06757, 8.326498, 30.994825)
 
 [node name="mrtvazona" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 48.572567, 3.2738707)
