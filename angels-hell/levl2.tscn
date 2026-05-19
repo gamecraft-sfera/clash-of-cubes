@@ -69,31 +69,31 @@ offset_right = 4950.0
 offset_bottom = 3059.0
 mouse_filter = 2
 
-[node name="lucisnik2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_2scgi")]
+[node name="kanon" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_2scgi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2763857, 3.537315, 5.259721)
 collision_layer = 1
 collision_mask = 1
 player = NodePath("../Character")
 
-[node name="lucisnik3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_2scgi")]
+[node name="kanon2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_2scgi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015614927, 3.537315, 27.547985)
 collision_layer = 1
 collision_mask = 1
 player = NodePath("../Character")
 
-[node name="lucisnik4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_2scgi")]
+[node name="kanon3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_2scgi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4282435, 3.537314, -24.10644)
 collision_layer = 1
 collision_mask = 1
 player = NodePath("../Character")
 
-[node name="lucisnik5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_2scgi")]
+[node name="kanon4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_2scgi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4483614, 3.537315, -51.74015)
 collision_layer = 1
 collision_mask = 1
 player = NodePath("../Character")
 
-[node name="lucisnik6" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_2scgi")]
+[node name="kanon5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_2scgi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1656246, 3.537315, 56.521084)
 collision_layer = 1
 collision_mask = 1

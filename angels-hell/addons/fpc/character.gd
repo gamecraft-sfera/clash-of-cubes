@@ -566,7 +566,7 @@ func _on_sprintspeedbutton_pressed() -> void:
  
 
 func _on_jumpbutton_pressed() -> void:
-	jump_velocity += 3.0
+	jump_velocity += 6.70
 	%UpgradesControl.visible = false
 	god_mode = false
 

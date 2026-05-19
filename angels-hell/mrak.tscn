@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d31lii16trgfa"]
+
+[ext_resource type="Texture2D" uid="uid://c41judm3u603k" path="res://mrak.png" id="1_cs4nm"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(2.4728518, 0, 0, 0, 2.2322373, 0, 0, 0, 1, 0, 0, 0)
+texture = ExtResource("1_cs4nm")
