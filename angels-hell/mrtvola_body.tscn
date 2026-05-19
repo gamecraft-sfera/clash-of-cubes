@@ -4,16 +4,15 @@
 [ext_resource type="PackedScene" uid="uid://bfp4malu7uy0f" path="res://mrtvola.tscn" id="2_finpw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vemnk"]
-radius = 0.19238281
-height = 0.52145386
+radius = 0.29248047
+height = 0.58496094
 
 [node name="MrtvolaBody" type="CharacterBody3D" groups=["mrtvola"]]
-transform = Transform3D(1.4460824, 0, 0, 0, 2.134551, 0, 0, 0, 1.1699427, 0.18635571, -0.15638182, -0.04460352)
 script = ExtResource("1_vemnk")
 
 [node name="MRTVOLA" parent="." instance=ExtResource("2_finpw")]
-transform = Transform3D(0.39999998, 0, 0, 0, 0.32175133, 0, 0, 0, 0.50072294, -0.2226057, 0.1600815, -0.044341326)
+transform = Transform3D(0.39999995, 0, 0, 0, 0.3217513, 0, 0, 0, 0.5007229, 0.004510281, -0.057566725, -0.044341326)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.9998198, 0, 0.017801402, 0, 0.6609252, 0, -0.017801411, 0, 0.9998415, -0.12185335, 0.25432017, 0.2094794)
+transform = Transform3D(0.99983495, 0, 0.017801799, 0, 0.9999993, 0, -0.017801795, 0, 0.9998415, 0.10526262, 0.02669736, 0.05042556)
 shape = SubResource("CapsuleShape3D_vemnk")
