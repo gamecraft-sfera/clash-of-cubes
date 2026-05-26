@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dsajyrubi2tu2"]
+[gd_scene load_steps=12 format=3 uid="uid://dsajyrubi2tu2"]
 
 [ext_resource type="Texture2D" uid="uid://cpd7gj1k4dbvk" path="res://addons/AllSkyFree_Sky_OvercastLow_Equirect.png" id="1_lcfo0"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_lcfo0"]
 [ext_resource type="PackedScene" uid="uid://cknf6iyt1pu8u" path="res://vlak_4.tscn" id="3_lcfo0"]
 [ext_resource type="Shader" uid="uid://bugeewnpc4ha2" path="res://shader.gdshader" id="4_w330c"]
 [ext_resource type="PackedScene" uid="uid://b5urdy54ssmki" path="res://lucisnik2.tscn" id="5_2scgi"]
+[ext_resource type="PackedScene" uid="uid://5peu1nguqrx7" path="res://rytir.tscn" id="6_np2h4"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_w330c"]
 panorama = ExtResource("1_lcfo0")
@@ -26,23 +27,19 @@ shader_parameter/vhs_intensity = 3.0
 shader_parameter/noise_intensity = 0.15
 shader_parameter/opacity = 0.5
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_2scgi"]
-size = Vector3(15.4662, 8.700562, 133.1387)
+[sub_resource type="BoxShape3D" id="BoxShape3D_np2h4"]
+size = Vector3(20.55574, 4.1962204, 142.62729)
 
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_w330c")
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 53.45147, 0)
-radius = 6.1239996
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.9999738, 2.0605632e-05, 0.0072430237, -0.007243053, 0.0028448077, 0.9999697, 0, -0.99999595, 0.0028448822, 0, 44.267242, 0)
 light_indirect_energy = 0.0
 
-[node name="Character" parent="." node_paths=PackedStringArray("start_point") instance=ExtResource("2_lcfo0")]
+[node name="Character" parent="." node_paths=PackedStringArray("start_point") groups=["player"] instance=ExtResource("2_lcfo0")]
 transform = Transform3D(-0.9994479, 0, -0.033224937, 0, 1, 0, 0.033224937, 0, -0.9994479, 0.02194202, -0.97709763, 3.1834793)
 start_point = NodePath(".")
 
@@ -99,8 +96,16 @@ collision_layer = 1
 collision_mask = 1
 player = NodePath("../Character")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.313255, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(0.99985933, 7.331199e-10, 0.016771829, -7.331199e-10, 1, -6.148748e-12, -0.016771829, -6.148748e-12, 0.99985933, -0.7070358, -1.614563, 1.6987847)
-shape = SubResource("BoxShape3D_2scgi")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.77668, -1.567936, 3.771988)
+shape = SubResource("BoxShape3D_np2h4")
+
+[node name="rytir" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_np2h4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.166523, 25.405672, 56.672737)
+player = NodePath("../Character")
+
+[connection signal="body_entered" from="Area3D2" to="Character" method="_on_area_3d_2_body_entered"]
+[connection signal="body_exited" from="Area3D2" to="Character" method="_on_area_3d_2_body_exited"]

@@ -12,6 +12,8 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if Global.rytirneutoci == true:
+		return
 	
 	look_at(player.global_position)
 	rotation = Vector3(0.0, rotation.y + PI, rotation.z)

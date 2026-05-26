@@ -641,3 +641,14 @@ func _on_noupdate_button_pressed() -> void:
 
 func _on_upgrades_cancel_pressed() -> void:
 	%UpgradesControl.visible = false
+
+
+
+func _on_area_3d_2_body_entered(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		Global.rytirneutoci = true
+
+
+func _on_area_3d_2_body_exited(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		Global.rytirneutoci = false
