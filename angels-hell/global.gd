@@ -9,3 +9,5 @@ var enemies: Array = []
 var maxhealth: int = 100
 
 var blood_points: int = 0
+
+var show_updates: bool = true

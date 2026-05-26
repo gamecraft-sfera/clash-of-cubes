@@ -152,6 +152,7 @@ func _ready():
 	god_mode = true
 	base_speed = Global.base_speed
 	health = Global.maxhealth
+	%UpgradesControl.visible = Global.show_updates
 	
 	#It is safe to comment this line if your game doesn't start with the mouse captured
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -601,7 +602,8 @@ func _on_again_button_pressed() -> void:
 	%DeadScreen.visible = false
 	god_mode = false
 	RETICLE.visible = true
-	health = 100
+	health = Global.maxhealth
+	Global.show_updates = true
 	get_tree().reload_current_scene()
 
 
@@ -625,3 +627,17 @@ func _on_dashbutton_pressed() -> void:
 	Global.sprint_speeds += 10
 	%UpgradesControl.visible = false
 	god_mode = false
+
+
+func _on_noupdate_button_pressed() -> void:
+	global_position = start_point.global_position
+	%DeadScreen.visible = false
+	god_mode = false
+	RETICLE.visible = true
+	health = Global.maxhealth
+	Global.show_updates = false
+	get_tree().reload_current_scene()
+
+
+func _on_upgrades_cancel_pressed() -> void:
+	%UpgradesControl.visible = false
