@@ -149,7 +149,7 @@ var mouseInput : Vector2 = Vector2(0,0)
 
 #region Main Control Flow
 func _ready():
-	god_mode = true
+	god_mode = Global.show_updates
 	base_speed = Global.base_speed
 	health = Global.maxhealth
 	%UpgradesControl.visible = Global.show_updates
@@ -170,6 +170,8 @@ func _ready():
 	
 	if OS.get_name() == "Web":
 		Input.set_use_accumulated_input(false)
+		
+	Global.main_char = self
 
 
 func _process(_delta):
@@ -641,6 +643,7 @@ func _on_noupdate_button_pressed() -> void:
 
 func _on_upgrades_cancel_pressed() -> void:
 	%UpgradesControl.visible = false
+	god_mode = false
 
 
 

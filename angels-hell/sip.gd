@@ -3,6 +3,8 @@ extends Area3D
 @export var target_position: Vector3
 @export var speed: float = 0.5
 
+@export var damage: int = 1
+
 func _physics_process(delta: float) -> void:
 	var direction = target_position - global_position
 	direction.normalized()
@@ -11,6 +13,8 @@ func _physics_process(delta: float) -> void:
 	look_at(target_position)
 	
 	if global_position.distance_to(target_position) <= 0.1:
+		if Global.main_char:
+			Global.main_char.damage(damage)
 		queue_free()
 
 

@@ -13,3 +13,6 @@ var blood_points: int = 0
 var show_updates: bool = true
 
 var rytirneutoci = false
+
+
+var main_char: MainCharacter
