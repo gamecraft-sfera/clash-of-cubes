@@ -107,5 +107,17 @@ shape = SubResource("BoxShape3D_np2h4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.166523, 25.405672, 56.672737)
 player = NodePath("../Character")
 
+[node name="rytir2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_np2h4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7276497, 25.405672, 11.981209)
+player = NodePath("../Character")
+
+[node name="rytir3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_np2h4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.902203, -6.6050014, 11.168648)
+player = NodePath("../Character")
+
+[node name="rytir4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_np2h4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.166523, 4.7634754, -87.7854)
+player = NodePath("../Character")
+
 [connection signal="body_entered" from="Area3D2" to="Character" method="_on_area_3d_2_body_entered"]
 [connection signal="body_exited" from="Area3D2" to="Character" method="_on_area_3d_2_body_exited"]
